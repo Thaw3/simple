@@ -1,0 +1,30 @@
+# Flutter/Dart/Pub related
+.dart_tool/
+.packages
+.pub-cache/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.melos_tool/
+generated_plugin_registrant.dart
+
+# iOS/Xcode related
+ios/
+windows/
+macos/
+linux/
+android/
+# Flutter web related
+web/
+# Flutter web build
+build/
+
+# VS Code related
+.vscode/
+
+# macOS
+.DS_Store
+
+# Web-related
+web/.dart_tool/
+web/build/
