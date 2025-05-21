@@ -14,6 +14,7 @@ windows/
 macos/
 linux/
 android/
+test/
 # Flutter web related
 web/
 # Flutter web build
