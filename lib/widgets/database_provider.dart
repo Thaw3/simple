@@ -7,6 +7,7 @@ class DatabaseProvider with ChangeNotifier {
   String _username = '';
   String _password = '';
   String _status = 'Not Connected';
+  String _port = '';
 
   // Getters
   String? get databaseType => _databaseType;
@@ -15,6 +16,7 @@ class DatabaseProvider with ChangeNotifier {
   String get username => _username;
   String get password => _password;
   String get status => _status;
+  String get port => _port;
 
   // Setters
   void setDatabaseType(String? type) {
@@ -29,6 +31,11 @@ class DatabaseProvider with ChangeNotifier {
 
   void setDatabaseName(String name) {
     _databaseName = name;
+    notifyListeners();
+  }
+
+  void setPort(String port) {
+    _port = port;
     notifyListeners();
   }
 
@@ -47,14 +54,14 @@ class DatabaseProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  // Reset method if needed
   void reset() {
     _databaseType = null;
     _host = '';
     _databaseName = '';
     _username = '';
     _password = '';
-    _status = '';
+    _port = '';
+    _status = 'Settings Reset';
     notifyListeners();
   }
 }

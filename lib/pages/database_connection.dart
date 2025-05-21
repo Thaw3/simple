@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:simple/widgets/database_provider.dart';
+import 'package:simple/services/connectdb_async.dart';
 
 class DatabaseConnection extends StatefulWidget {
   const DatabaseConnection({super.key});
@@ -14,21 +15,47 @@ class _DatabaseConnectionState extends State<DatabaseConnection> {
   final TextEditingController dbNameController = TextEditingController();
   final TextEditingController userController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController portController = TextEditingController();
 
   String? selectedDbType;
   bool isPasswordVisible = false;
   String status = "";
 
   final List<String> dbTypes = ['SQL', 'NoSQL'];
+  final _dbService = DatabaseConnectionService();
 
-  void connectToDatabase() {
+  Future<void> connectToDatabase({
+    required String host,
+    required String dbName,
+    required String username,
+    required String password,
+    required String dbType,
+    required String port,
+  }) async {
     final provider = Provider.of<DatabaseProvider>(context, listen: false);
-    provider.setHost(hostController.text);
-    provider.setPassword(passwordController.text);
-    provider.setUsername(userController.text);
-    provider.setDatabaseName(dbNameController.text);
-    provider.setDatabaseType(selectedDbType);
-    provider.setStatus("Connected");
+    bool success = await _dbService.connect(
+      host: host,
+      dbName: dbName,
+      username: username,
+      password: password,
+      dbType: dbType,
+      port: port,
+    );
+    provider.setStatus(success ? "Connected" : "Connection Failed");
+  }
+
+  void resetDatabaseSettings() {
+    final provider = Provider.of<DatabaseProvider>(context, listen: false);
+    hostController.clear();
+    dbNameController.clear();
+    portController.clear();
+    userController.clear();
+    passwordController.clear();
+    provider.reset();
+  }
+  void disconnectFromDatabase() {
+    final provider = Provider.of<DatabaseProvider>(context, listen: false);
+    provider.setStatus("Disconnected");
   }
 
   @override
@@ -40,6 +67,7 @@ class _DatabaseConnectionState extends State<DatabaseConnection> {
     userController.text = provider.username ?? '';
     passwordController.text = provider.password ?? '';
     selectedDbType = provider.databaseType;
+    portController.text = provider.port ?? '';
   }
 
   @override
@@ -54,11 +82,7 @@ class _DatabaseConnectionState extends State<DatabaseConnection> {
             DropdownButtonFormField<String>(
               decoration: InputDecoration(labelText: 'Database Type'),
               value: provider.databaseType,
-              onChanged: (String? newValue) {
-                setState(() {
-                  selectedDbType = newValue;
-                });
-              },
+              onChanged: provider.setDatabaseType,
               items:
                   dbTypes
                       .map(
@@ -79,13 +103,19 @@ class _DatabaseConnectionState extends State<DatabaseConnection> {
               decoration: InputDecoration(labelText: 'Database Name'),
             ),
             TextField(
+              controller: portController,
+              onChanged: provider.setPort,
+              decoration: InputDecoration(labelText: 'Port Number'),
+              keyboardType: TextInputType.number,
+            ),
+            TextField(
               controller: userController,
               onChanged: provider.setUsername,
               decoration: InputDecoration(labelText: 'Username'),
             ),
             TextField(
               controller: passwordController,
-              onChanged: provider.setPassword,
+              //onChanged: provider.setPassword,
               obscureText: !isPasswordVisible,
               decoration: InputDecoration(
                 labelText: 'Password',
@@ -103,8 +133,40 @@ class _DatabaseConnectionState extends State<DatabaseConnection> {
             ),
             SizedBox(height: 20),
             ElevatedButton(
-              onPressed: connectToDatabase,
+              onPressed: () async {
+                if (hostController.text.isEmpty ||
+                    dbNameController.text.isEmpty ||
+                    portController.text.isEmpty ||
+                    userController.text.isEmpty ||
+                    passwordController.text.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Please fill in all fields'),
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                } else {
+                  await connectToDatabase(
+                    host: hostController.text,
+                    dbName: dbNameController.text,
+                    port: portController.text,
+                    username: userController.text,
+                    password: passwordController.text,
+                    dbType: provider.databaseType ?? dbTypes.first,
+                  );
+                }
+              },
               child: Text('Connect'),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: disconnectFromDatabase,
+              child: Text('Disconnect'),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: resetDatabaseSettings,
+              child: Text('Reset Settings'),
             ),
             SizedBox(height: 20),
             Text(
