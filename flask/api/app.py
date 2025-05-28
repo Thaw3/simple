@@ -1,9 +1,10 @@
-from flask import Flask, request, jsonify
+from flask import Flask
 
 app = Flask(__name__)
 
-@app.route("/send", methods=["POST"])
-def send():
-    data = request.json
-    response = send_data(data.get("message", ""))
-    return jsonify({"response": response})
+@app.route('/')
+def hello_world():
+    return "Hello, World!"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
