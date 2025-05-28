@@ -1,0 +1,33 @@
+# mariadb sql setup on ubuntu 22.04 docker file
+FROM mariadb:latest
+# Set environment variables for MariaDB
+ENV MYSQL_ROOT_PASSWORD=root_password
+ENV MYSQL_DATABASE=simple_db
+# Create a user and database for the application
+# Set environment variables for the user and password
+ENV MYSQL_USER=flutter
+ENV MYSQL_PASSWORD=password
+# Expose the default MariaDB port
+EXPOSE 3306
+# Copy the SQL script to initialize the database
+COPY init.sql /docker-entrypoint-initdb.d/
+# The init.sql script will be executed when the container is started
+# This script should contain the SQL commands to create tables and insert initial data
+# Note: The init.sql file should be in the same directory as this Dockerfile
+# You can create the init.sql file with the necessary SQL commands
+# Example init.sql content:
+# CREATE TABLE users (
+#     id INT AUTO_INCREMENT PRIMARY KEY,
+#     name VARCHAR(100) NOT NULL,
+#     email VARCHAR(100) NOT NULL UNIQUE,
+#     password VARCHAR(100) NOT NULL
+# );
+# INSERT INTO users (name, email, password) VALUES ('John Doe', 'john@example.com', 'password123');
+# The MariaDB container will automatically run the init.sql script when it starts
+# and set up the database with the specified user and initial data.
+# To build the Docker image, run the following command in the terminal:
+# docker build -t my_mariadb_image .
+# To run the container, use the following command:
+# docker run -d -p 3306:3306 --name my_mariadb_container my_mariadb_image
+# To connect to the MariaDB database from your application, use the following connection string:
+# mysql://flutter:password@localhost:3306/simple_db
