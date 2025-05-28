@@ -18,8 +18,10 @@ samples, guidance on mobile development, and a full API reference.
 ```bash
 docker build -t flask_api:v1 .
 ```
+
 ```bash
 docker build -t mariadb:v1 . 
+```
 
 ```bash
 export APIPWD="/Users/kyawswartun/Dev/proj/simple/flask/api"
@@ -28,6 +30,7 @@ export APIPWD="/Users/kyawswartun/Dev/proj/simple/flask/api"
 ```bash
 docker run -p 5000:5000 -v "$APIPWD":/app flask_api
 ```
+
 ```bash
 export SQLPWD="/Users/kyawswartun/Dev/proj/simple/flask/sql"
 ```
