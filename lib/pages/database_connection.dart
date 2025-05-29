@@ -21,27 +21,29 @@ class _DatabaseConnectionState extends State<DatabaseConnection> {
   bool isPasswordVisible = false;
   String status = "";
 
-  final List<String> dbTypes = ['SQL', 'NoSQL'];
+  final List<String> dbTypes = ['mysql', 'mariadb'];
   final _dbService = DatabaseConnectionService();
 
   Future<void> connectToDatabase({
     required String host,
     required String dbName,
+    required String port,
     required String username,
     required String password,
     required String dbType,
-    required String port,
   }) async {
     final provider = Provider.of<DatabaseProvider>(context, listen: false);
-    bool success = await _dbService.connect(
+    final response = await _dbService.connect(
       host: host,
       dbName: dbName,
+      port: port,
       username: username,
       password: password,
       dbType: dbType,
-      port: port,
     );
-    provider.setStatus(success ? "Connected" : "Connection Failed");
+    final status = response['status'] ?? 'error';
+    final message = response['message'] ?? 'Unknown error';
+    provider.setStatus('$status: $message');
   }
 
   void resetDatabaseSettings() {
