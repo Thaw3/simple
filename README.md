@@ -26,7 +26,7 @@ docker build -t mariadb:v1 .
 docker network create simple-net
 ```
 ```bash
-export APIPWD="/Users/kyawswartun/Dev/proj/simple/flask/api"
+export APIPWD="/Users/kyawswartun/Dev/proj/simple/thirdparty/api"
 ```
 
 ```bash
@@ -38,7 +38,7 @@ docker run -d --name flask_api \
 ```
 
 ```bash
-export SQLPWD="/Users/kyawswartun/Dev/proj/simple/flask/sql"
+export SQLPWD="/Users/kyawswartun/Dev/proj/simple/thirdparty/sql"
 ```
 
 ### Daemon Mode for mariadb
@@ -69,4 +69,30 @@ docker exec -it mariadb bash
 ```
 ```bash
 mariadb -u flutter -p
+```
+### BEFORE MQTT
+```bash
+export MQPWD="/Users/kyawswartun/Dev/proj/simple/thirdparty/mosquitto"
+```
+### Create Password file for broker connectivity
+```bash
+docker run \ 
+--rm -it -v "$MQPWD/config:/mosquitto/config" eclipse-mosquitto \ 
+mosquitto_passwd -c "$MQPWD/config/password_file" flutter
+```
+### MQTT Container Build & RUN
+```bash
+# docker build -t eclipse-mosquitto:v0.1 .
+```
+
+```bash
+docker run -d \
+  --name mosquitto \
+  --network simple-net \
+  -p 1883:1883 \
+  -p 9001:9001 \
+  -v "$MQPWD/config:/mosquitto/config" \
+  -v "$MQPWD/data:/mosquitto/data" \
+  -v "$MQPWD/log:/mosquitto/log" \
+  eclipse-mosquitto
 ```

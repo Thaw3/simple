@@ -11,7 +11,7 @@ class DatabaseConnectionService {
     required String password,
     required String dbType,
   }) async {
-    final url = Uri.parse('http://0.0.0.0:5000/databaseconnrequest'); // Use your Flask server address
+    final url = Uri.parse('http://0.0.0.0:5000/api/databaseconnrequest'); // Use your Flask server address
 
     final connectionData = {
       'host': host,

@@ -1,0 +1,11 @@
+# Give flutter full access to their own namespace
+user flutter
+topic readwrite simple/#
+
+# Give qt read-only access to a shared topic
+user qt
+topic read simple/topic/#
+
+# Give react read-only access to a shared topic
+user react
+topic read simple/topic/#

@@ -29,3 +29,8 @@ build/
 # Web-related
 web/.dart_tool/
 web/build/
+
+# Python Cache
+thirdparty/api/__pycache__/
+thirdparty/routes/__pycache__/
+thirdparty/services/__pycache__/
