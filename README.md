@@ -75,10 +75,16 @@ mariadb -u flutter -p
 export MQPWD="/Users/kyawswartun/Dev/proj/simple/thirdparty/mosquitto"
 ```
 ### Create Password file for broker connectivity
+
+# (Just Once time ) Create password file for user 'flutter'
 ```bash
-docker run \ 
---rm -it -v "$MQPWD/config:/mosquitto/config" eclipse-mosquitto \ 
-mosquitto_passwd -c "$MQPWD/config/password_file" flutter
+docker run --rm -it -v "$MQPWD/config:/mosquitto/config" eclipse-mosquitto \
+  mosquitto_passwd -b -c /mosquitto/config/password_file flutter yourpassword
+```
+```bash
+# Fix ownership to root (required for future Mosquitto versions)
+docker run --rm -it -v "$MQPWD/config:/mosquitto/config" eclipse-mosquitto \
+  chown root:root /mosquitto/config/password_file
 ```
 ### MQTT Container Build & RUN
 ```bash
@@ -96,3 +102,17 @@ docker run -d \
   -v "$MQPWD/log:/mosquitto/log" \
   eclipse-mosquitto
 ```
+```bash
+docker exec -it mosquitto bash
+```
+
+### Testing MQTT pub/sub
+
+```bash
+mosquitto_sub -q 2 -h localhost -t simple/topic -u flutter -P yourpassword
+```
+
+```bash
+mosquitto_pub -q 2 -h localhost -t simple/topic -m "Hello MQTT" -u flutter -P yourpassword
+```
+

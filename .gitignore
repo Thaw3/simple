@@ -32,5 +32,5 @@ web/build/
 
 # Python Cache
 thirdparty/api/__pycache__/
-thirdparty/routes/__pycache__/
-thirdparty/services/__pycache__/
+thirdparty/api/routes/__pycache__/
+thirdparty/api/services/__pycache__/
