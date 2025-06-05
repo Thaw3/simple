@@ -1,16 +1,19 @@
+// lib/widgets/robot_price_widgets.dart
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // For TextInputFormatter
+import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:simple/states/totals_notifier.dart'; // Ensure this imports CardInvoiceData
 
 // ModelData class: Each model has its own required description
 class ModelData {
   final double price;
   final String imageUrl;
-  final String description; // Non-nullable: Each model has its own description
+  final String description;
 
   ModelData({
     required this.price,
     required this.imageUrl,
-    required this.description, // Required
+    required this.description,
   });
 
   @override
@@ -27,9 +30,10 @@ class ModelData {
 }
 
 class ProductCard extends StatefulWidget {
+  // widget.title will be used as the productId for TotalsNotifier
   final String title;
-  final double initialPricePerItem; // Fallback if modelsWithPrices is empty
-  final Map<String, ModelData> modelsWithPrices; // Each ModelData contains its own description
+  final double initialPricePerItem;
+  final Map<String, ModelData> modelsWithPrices;
   final String imageUrl; // Fallback image for the card itself
 
   const ProductCard({
@@ -37,7 +41,7 @@ class ProductCard extends StatefulWidget {
     required this.title,
     required this.initialPricePerItem,
     required this.modelsWithPrices,
-    required this.imageUrl, // No general description prop
+    required this.imageUrl,
   }) : super(key: key);
 
   @override
@@ -46,11 +50,11 @@ class ProductCard extends StatefulWidget {
 
 class _ProductCardState extends State<ProductCard> {
   final _priceController = TextEditingController();
-  String? _selectedModelName;
-  late String _selectedModelImageUrl;
-  late String _currentDescription; // Will always come from the selected ModelData
-  int _itemCount = 0;
-  double _totalPrice = 0.0;
+  String? _selectedModelName; // Name of the currently selected model
+  late String _selectedModelImageUrl; // URL of the selected model's image
+  late String _currentDescription; // Description of the selected model
+  int _itemCount = 0; // Quantity of the item
+  double _totalPrice = 0.0; // Local total price for this card's UI (qty * unitPrice)
 
   List<String> get _modelNames => widget.modelsWithPrices.keys.toList();
 
@@ -58,55 +62,114 @@ class _ProductCardState extends State<ProductCard> {
   void initState() {
     super.initState();
 
+    // Initialize local state based on props
     if (widget.modelsWithPrices.isNotEmpty) {
-      _selectedModelName = _modelNames[0];
+      _selectedModelName = _modelNames[0]; // Default to the first model
       final selectedModelData = widget.modelsWithPrices[_selectedModelName!]!;
       _priceController.text = selectedModelData.price.toStringAsFixed(2);
       _selectedModelImageUrl = selectedModelData.imageUrl;
-      _currentDescription = selectedModelData.description; // Directly from model
+      _currentDescription = selectedModelData.description;
     } else {
-      // This case implies the product has no models defined in the CSV,
-      // or all models were invalid during parsing.
+      // Fallback if no models are provided (should ideally not happen with current logic)
       _selectedModelName = null;
       _priceController.text = widget.initialPricePerItem.toStringAsFixed(2);
       _selectedModelImageUrl = widget.imageUrl;
-      _currentDescription = "No models available for this product."; // Fallback description
-      print("WARNING: ProductCard for '${widget.title}' has no models. Using fallback values.");
+      _currentDescription = "No models available for this product.";
     }
+    // _totalPrice will be calculated and set by _updateNotifierWithCurrentState initially
 
-    _priceController.addListener(_calculateTotalPrice);
-    _calculateTotalPrice();
+    // Add listener to the price controller to react to manual price changes or model changes
+    _priceController.addListener(_onPriceOrQuantityChanged);
+
+    // Perform the initial calculation and notification to TotalsNotifier
+    // after the first frame has been built, ensuring context is available.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) { // Ensure the widget is still in the widget tree
+        _updateNotifierWithCurrentState();
+      }
+    });
   }
 
   @override
   void didUpdateWidget(covariant ProductCard oldWidget) {
     super.didUpdateWidget(oldWidget);
 
-    bool mainPropsChanged = widget.initialPricePerItem != oldWidget.initialPricePerItem ||
+    bool mainPropsChanged = widget.title != oldWidget.title ||
+        widget.initialPricePerItem != oldWidget.initialPricePerItem ||
         !_mapEquals(widget.modelsWithPrices, oldWidget.modelsWithPrices) ||
         widget.imageUrl != oldWidget.imageUrl;
 
     if (mainPropsChanged) {
+      // If the product identifier (title) changes, remove the old entry from the notifier
+      if (widget.title != oldWidget.title && mounted) {
+        Provider.of<TotalsNotifier>(context, listen: false).removeCardData(oldWidget.title);
+      }
+
+      // Re-initialize local state based on new widget properties
       if (widget.modelsWithPrices.isNotEmpty) {
         String? newSelectedModelName = _selectedModelName;
+        // If current selected model is no longer valid or was null, try to pick the first one
         if (newSelectedModelName == null || !widget.modelsWithPrices.containsKey(newSelectedModelName)) {
-          newSelectedModelName = _modelNames[0];
+           if (_modelNames.isNotEmpty) {
+            newSelectedModelName = _modelNames[0];
+          } else {
+            newSelectedModelName = null; // No models to select
+          }
         }
-        _selectedModelName = newSelectedModelName;
-
-        final selectedModelData = widget.modelsWithPrices[_selectedModelName!]!;
-        _priceController.text = selectedModelData.price.toStringAsFixed(2);
-        _selectedModelImageUrl = selectedModelData.imageUrl;
-        _currentDescription = selectedModelData.description;
+        
+        // Update local state if a valid model is found
+        if (newSelectedModelName != null && widget.modelsWithPrices.containsKey(newSelectedModelName)) {
+            final selectedModelData = widget.modelsWithPrices[newSelectedModelName]!;
+             // This sequence ensures UI updates correctly BEFORE the listener potentially fires
+            _selectedModelName = newSelectedModelName; // Update local state for dropdown
+            _priceController.text = selectedModelData.price.toStringAsFixed(2); // Triggers listener
+            // Manually set other state vars for UI consistency
+            setStateIfMounted(() { // Custom helper to check mounted
+              _selectedModelImageUrl = selectedModelData.imageUrl;
+              _currentDescription = selectedModelData.description;
+            });
+        } else {
+             // Fallback if no valid model can be selected
+            _priceController.text = widget.initialPricePerItem.toStringAsFixed(2);
+             setStateIfMounted(() {
+                _selectedModelName = null;
+                _selectedModelImageUrl = widget.imageUrl;
+                _currentDescription = "Error selecting model.";
+             });
+        }
       } else {
-        _selectedModelName = null;
+        // Case where the new props have no models
         _priceController.text = widget.initialPricePerItem.toStringAsFixed(2);
-        _selectedModelImageUrl = widget.imageUrl;
-        _currentDescription = "No models available for this product.";
+        setStateIfMounted(() {
+            _selectedModelName = null;
+            _selectedModelImageUrl = widget.imageUrl;
+            _currentDescription = "No models available for this product.";
+        });
       }
-      _calculateTotalPrice();
+      // _updateNotifierWithCurrentState is implicitly called by _priceController's listener
+      // or should be called explicitly if the price controller isn't changed but state needs update.
+      // For simplicity, relying on priceController listener or next user interaction.
+      // A more robust way if priceController text doesn't change:
+      if (mounted && (widget.modelsWithPrices.isEmpty || _priceController.text == (widget.initialPricePerItem.toStringAsFixed(2)))) {
+          _updateNotifierWithCurrentState();
+      }
+
+    } else if (_selectedModelName != null &&
+               !widget.modelsWithPrices.containsKey(_selectedModelName) &&
+               widget.modelsWithPrices.isNotEmpty && mounted) {
+        // If only the selected model became invalid (e.g., models list changed),
+        // try to select the first available model.
+        _updateStateForSelectedModel(_modelNames[0]);
     }
   }
+  
+  // Helper to call setState only if widget is mounted
+  void setStateIfMounted(VoidCallback fn) {
+    if (mounted) {
+      setState(fn);
+    }
+  }
+
 
   bool _mapEquals<K, V>(Map<K, V>? a, Map<K, V>? b) {
     if (a == null) return b == null;
@@ -121,48 +184,104 @@ class _ProductCardState extends State<ProductCard> {
 
   @override
   void dispose() {
-    _priceController.removeListener(_calculateTotalPrice);
+    _priceController.removeListener(_onPriceOrQuantityChanged);
     _priceController.dispose();
+    // Optional: Notify TotalsNotifier that this card is being removed.
+    // This is more critical if cards are dynamically added/removed from the list.
+    // For a static list loaded from CSV, it might not be strictly necessary
+    // unless you want totals to reflect only currently visible/active cards.
+    // Provider.of<TotalsNotifier>(context, listen: false).removeCardData(widget.title);
     super.dispose();
   }
 
-  void _calculateTotalPrice() {
-    final price = double.tryParse(_priceController.text) ?? 0.0;
-    setState(() {
-      _totalPrice = price * _itemCount;
-    });
+  // This method is called when the price (from text field or model change) or quantity changes.
+  // It updates the local total and then notifies the TotalsNotifier.
+  void _onPriceOrQuantityChanged() {
+    if (mounted) {
+      _updateNotifierWithCurrentState();
+    }
   }
 
-  void _updateStateForSelectedModel(String? modelName) {
-    if (modelName != null && widget.modelsWithPrices.containsKey(modelName)) {
-      setState(() {
-        _selectedModelName = modelName;
-        final modelData = widget.modelsWithPrices[modelName]!;
-        _priceController.text = modelData.price.toStringAsFixed(2);
-        _selectedModelImageUrl = modelData.imageUrl;
-        _currentDescription = modelData.description; // Directly from model
+  // Central method to calculate current state and update the TotalsNotifier
+  void _updateNotifierWithCurrentState() {
+    if (!mounted) return;
+
+    final double unitPriceForSelected = double.tryParse(_priceController.text) ??
+                                      (widget.modelsWithPrices.isNotEmpty && _selectedModelName != null && widget.modelsWithPrices.containsKey(_selectedModelName)
+                                          ? widget.modelsWithPrices[_selectedModelName!]!.price
+                                          : widget.initialPricePerItem);
+
+    final double currentTotalForCard = unitPriceForSelected * _itemCount;
+
+    // Update the local _totalPrice state if it has changed, to update this card's UI
+    if (_totalPrice != currentTotalForCard) {
+      setState(() { // This setState is for the _totalPrice display on this card
+        _totalPrice = currentTotalForCard;
       });
+    }
+
+    // Prepare the detailed data object for the notifier
+    final cardData = CardInvoiceData(
+      productId: widget.title, // Using the card's title as its unique ID
+      productName: widget.title,
+      selectedModelName: _selectedModelName, // Could be null if no models
+      itemCount: _itemCount,
+      unitPrice: unitPriceForSelected,
+      currentTotal: currentTotalForCard,
+    );
+
+    // Send the updated data to the TotalsNotifier
+    // context.read<T>() is shorthand for Provider.of<T>(context, listen: false)
+    context.read<TotalsNotifier>().updateCardData(cardData);
+  }
+
+
+  // Called when a new model is selected from the dropdown
+  void _updateStateForSelectedModel(String? modelName) {
+    if (!mounted) return;
+    if (modelName != null && widget.modelsWithPrices.containsKey(modelName)) {
+      final modelData = widget.modelsWithPrices[modelName]!;
+
+      // Setting _priceController.text will trigger its listener (_onPriceOrQuantityChanged),
+      // which in turn calls _updateNotifierWithCurrentState.
+      _priceController.text = modelData.price.toStringAsFixed(2);
+
+      // Update other local state variables that affect this card's UI directly
+      // and call setState if they change.
+      if (_selectedModelName != modelName ||
+          _selectedModelImageUrl != modelData.imageUrl ||
+          _currentDescription != modelData.description) {
+        setState(() {
+          _selectedModelName = modelName;
+          _selectedModelImageUrl = modelData.imageUrl;
+          _currentDescription = modelData.description;
+        });
+      }
     }
   }
 
   void _incrementCount() {
+    if (!mounted) return;
     setState(() {
       _itemCount++;
-      _calculateTotalPrice();
     });
+    _onPriceOrQuantityChanged(); // Recalculate and notify
   }
 
   void _decrementCount() {
+    if (!mounted) return;
     if (_itemCount > 0) {
       setState(() {
         _itemCount--;
-        _calculateTotalPrice();
       });
+      _onPriceOrQuantityChanged(); // Recalculate and notify
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    // This widget only sends updates to TotalsNotifier, it doesn't need to
+    // rebuild when TotalsNotifier changes, so no context.watch<TotalsNotifier>() here.
     return Card(
       elevation: 2,
       margin: const EdgeInsets.symmetric(vertical: 8.0),
@@ -211,7 +330,10 @@ class _ProductCardState extends State<ProductCard> {
                       ),
                       value: _selectedModelName,
                       items: _modelNames.map((String modelName) {
-                        final modelPrice = widget.modelsWithPrices[modelName]!.price;
+                        final modelData = widget.modelsWithPrices[modelName];
+                        // Basic safety check, though _modelNames should only contain valid keys
+                        if (modelData == null) return DropdownMenuItem<String>(child: Text("Error"), value: modelName);
+                        final modelPrice = modelData.price;
                         return DropdownMenuItem<String>(
                           value: modelName,
                           child: Text(
@@ -235,17 +357,17 @@ class _ProductCardState extends State<ProductCard> {
                     ),
                   SizedBox(height: 8),
                   Text(
-                    _currentDescription, // Uses the model-specific description
+                    _currentDescription,
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           fontSize: 12,
                           color: Colors.grey[700],
                         ),
-                    maxLines: 4, // Allow more lines for description
+                    maxLines: 4,
                     overflow: TextOverflow.ellipsis,
                   ),
                   SizedBox(height: 12),
                   Text(
-                    'Total Price: \$${_totalPrice.toStringAsFixed(2)}',
+                    'Total Price: \$${_totalPrice.toStringAsFixed(2)}', // Displays this card's local total
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,

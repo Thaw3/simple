@@ -44,7 +44,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _selectedIndex = 2;
 
-  final List<Widget> _pages = [HomeScreen(), ImageClassification(), RobotPriceCalculator(), DatabaseConnection()];
+  final List<Widget> _pages = [HomeScreen(), ImageClassification(), RobotPriceCalculatorPage(), DatabaseConnection()];
 
   void _onDrawerItemSelected(int index) {
     setState(() {
