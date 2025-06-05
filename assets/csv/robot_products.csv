@@ -1,0 +1,12 @@
+title,initialPricePerItem,fallbackImageUrl,modelName,modelPrice,modelImageUrl,modelDescription
+Robotic Arm Kit,299.99,assets/images/bee.png,Basic Arm,349.99,assets/images/cat.jpg,"Standard 3-axis robotic arm, ideal for beginners and light tasks. Includes servo motors and controller."
+Robotic Arm Kit,299.99,assets/images/cat.png,Advanced Arm,599.50,assets/images/bee.jpg,"Upgraded 5-axis robotic arm with higher torque servos and metal grippers. Suitable for more complex projects."
+Mobile Robot Platform,199.00,assets/images/robot_arm.png,Wheeled Base,220.00,assets/images/robot_arm.png,"A sturdy 4-wheel drive mobile platform. Comes with DC motors, wheels, and chassis. Add your own controller."
+Mobile Robot Platform,199.00,assets/images/platform_default.png,Tracked Base,275.00,assets/images/bee.jpg,"All-terrain tracked mobile platform. Excellent for uneven surfaces. Includes motors and robust tracks."
+Sensor Pack Alpha,79.99,assets/images/sensor_pack_default.png,Starter Sensors,89.99,assets/images/cat.jpg,"Includes ultrasonic distance sensor, IR line follower, and a temperature/humidity sensor. Great for environment sensing."
+Sensor Pack Alpha,79.99,assets/images/sensor_pack_default.png,Vision Module,149.99,assets/images/robot_arm.jpg,"Miniature camera module with basic object detection capabilities. Connects via I2C or SPI. For adding sight to your robot."
+LiPo Battery,25.00,assets/images/battery_default.png,2200mAh 3S,29.95,assets/images/robot_arm.jpg,"High-discharge 2200mAh 3-cell LiPo battery. Provides ample power for most small to medium robots. XT60 connector."
+LiPo Battery,25.00,assets/images/battery_default.png,5000mAh 3S,45.50,assets/images/cat.jpg,"Large capacity 5000mAh 3-cell LiPo battery for extended runtimes. XT60 connector. Heavier than 2200mAh."
+Microcontroller Board,15.00,assets/images/mcu_default.png,MCU Standard,19.99,assets/images/robot_arm.jpg,"Arduino-compatible microcontroller board with ATmega328P. USB programmable. Plenty of I/O pins."
+Microcontroller Board,15.00,assets/images/mcu_default.png,MCU Pro,35.00,assets/images/bee.jpg,"Advanced microcontroller board with ESP32. Features WiFi, Bluetooth, and more processing power."
+Gripper Assembly,40.00,assets/images/gripper_default.png,Standard Gripper,49.99,assets/images/cat.jpg,"A simple two-finger parallel gripper assembly. Servo-actuated. Made from durable plastic."

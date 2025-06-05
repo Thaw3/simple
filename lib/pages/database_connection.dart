@@ -76,7 +76,6 @@ class _DatabaseConnectionState extends State<DatabaseConnection> {
   Widget build(BuildContext context) {
     final provider = Provider.of<DatabaseProvider>(context);
     return Scaffold(
-      appBar: AppBar(title: Text('Database Settings')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(

@@ -4,6 +4,8 @@ import 'package:simple/pages/database_connection.dart';
 import 'package:simple/pages/homepage.dart';
 import 'package:simple/widgets/database_provider.dart';
 import 'package:simple/widgets/app_drawer.dart';
+import 'package:simple/pages/image_classification.dart';
+import 'package:simple/pages/robot_price_calculator.dart';
 
 void main() {
   runApp(MyApp());
@@ -40,20 +42,37 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 2;
 
-  final List<Widget> _pages = [HomeScreen(), DatabaseConnection()];
+  final List<Widget> _pages = [HomeScreen(), ImageClassification(), RobotPriceCalculator(), DatabaseConnection()];
 
   void _onDrawerItemSelected(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
+  
+  final List<String> _titles = [
+    'Home',
+    'Image Classification',
+    'Robot Price Calculator',
+    'Database Connection',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Simple')),
+      appBar: AppBar(
+        title: Text(_titles[_selectedIndex]),
+        actions: [
+          // IconButton(
+          //   icon: Icon(_getAppBarIcon(_selectedIndex)),
+          //   onPressed: () {
+          //     // optional action
+          //   },
+          // ),
+        ],
+      ),
       drawer: AppDrawer(
         selectedIndex: _selectedIndex,
         onItemSelected: _onDrawerItemSelected,
@@ -61,4 +80,16 @@ class _MainPageState extends State<MainPage> {
       body: _pages[_selectedIndex],
     );
   }
+  // IconData _getAppBarIcon(int index) {
+  //   switch (index) {
+  //     case 0:
+  //       return Icons.home;
+  //     case 1:
+  //       return Icons.image;
+  //     case 2:
+  //       return Icons.storage;
+  //     default:
+  //       return Icons.help;
+  //   }
+  // }
 }
