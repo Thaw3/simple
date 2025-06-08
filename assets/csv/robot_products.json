@@ -1,0 +1,320 @@
+[
+  {
+    "title": "ROM Dynamics Controller",
+    "initialPricePerItem": 1500,
+    "fallbackImageUrl": "assets/images/robotcontroller.jpg",
+    "models": [
+      {
+        "modelName": "ROM Dynamics Controller",
+        "modelPrice": 1500,
+        "modelImageUrl": "assets/images/robotcontroller.jpg",
+        "modelDescription": "(Hardware & Software Implementation)ROM Robot Controller, 168 Mhz embedded controller, customized firmware, free RTOS, motor driver, IMU, GPS & all sensors implementation, custom Linux OS build & deployment, Robot Operating System II, Navigation II, SLAM, GUI QT app development, Auto Charging System, Circuit Design & the whole AMR system. (Can get all software features as Binary Distribution)"
+      }
+    ]
+  },
+  {
+    "title": "IMU",
+    "initialPricePerItem": 37.9,
+    "fallbackImageUrl": "assets/images/imu1.jpg",
+    "models": [
+      {
+        "modelName": "WT901C-RS485 Modbus Tilt Sensor",
+        "modelPrice": 37.9,
+        "modelImageUrl": "assets/images/imu1.jpg",
+        "modelDescription": "WitMotion WT901C-RS485 Modbus Tilt Sensor, 200Hz 3-axis Acceleration+Gyro+Magnetic,Tilt Angle Sensor for Geotechnical Monitoring"
+      },
+      {
+        "modelName": "WT901 C-232",
+        "modelPrice": 37.9,
+        "modelImageUrl": "assets/images/imu2.jpg",
+        "modelDescription": "WT901 C-232 Gyroscope Sensor, Triaxial Acceleration, Gyro, Angle, Digital Compass"
+      },
+      {
+        "modelName": "HWT901B TTL",
+        "modelPrice": 77,
+        "modelImageUrl": "assets/images/imu3.jpg",
+        "modelDescription": "[Industrial-Grade Accelerometer+Inclinometer] HWT901B TTL Gyroscope+ Angle(xy 0.05' Accuancy)+Digital Compass + Altitude + Magnetometer Compensation"
+      }
+    ]
+  },
+  {
+    "title": "IMU Conn Cable",
+    "initialPricePerItem": 5,
+    "fallbackImageUrl": "assets/images/imu4.jpg",
+    "models": [
+      {
+        "modelName": "CH340 USB to TTL Serial Download Cable",
+        "modelPrice": 5,
+        "modelImageUrl": "assets/images/imu4.jpg",
+        "modelDescription": "CH340G CH340 USB to TTL Serial Download Cable Convert Wire Adapter Compatible Win 7/8/10 for Arduino"
+      }
+    ]
+  },
+  {
+    "title": "Battery ",
+    "initialPricePerItem": 200,
+    "fallbackImageUrl": "assets/images/batteryanddocker1.jpg",
+    "models": [
+      {
+        "modelName": "Battery",
+        "modelPrice": 200,
+        "modelImageUrl": "assets/images/batteryanddocker1.jpg",
+        "modelDescription": "Lipo 4"
+      }
+    ]
+  },
+  {
+    "title": "Charging Dock",
+    "initialPricePerItem": 150,
+    "fallbackImageUrl": "assets/images/batteryanddocker2.jpg",
+    "models": [
+      {
+        "modelName": "Docking System",
+        "modelPrice": 150,
+        "modelImageUrl": "assets/images/batteryanddocker2.jpg",
+        "modelDescription": "autocharging system"
+      }
+    ]
+  },
+  {
+    "title": "Design Po Po robot chassis",
+    "initialPricePerItem": 300,
+    "fallbackImageUrl": "assets/images/popo.jpg",
+    "models": [
+      {
+        "modelName": "Robot Design & Body parts model 1",
+        "modelPrice": 300,
+        "modelImageUrl": "assets/images/popo.jpg",
+        "modelDescription": "Po Po robot chassis"
+      }
+    ]
+  },
+  {
+    "title": "Design Kilo robot chassis",
+    "initialPricePerItem": 300,
+    "fallbackImageUrl": "assets/images/kilorobot.jpg",
+    "models": [
+      {
+        "modelName": "Robot Design & Body parts model 2",
+        "modelPrice": 300,
+        "modelImageUrl": "assets/images/kilorobot.jpg",
+        "modelDescription": "Kilo robot chassis"
+      }
+    ]
+  },
+  {
+    "title": "Lidar",
+    "initialPricePerItem": 300,
+    "fallbackImageUrl": "assets/images/lidar1.jpg",
+    "models": [
+      {
+        "modelName": "RPLIDAR A2 M8 360degree",
+        "modelPrice": 300,
+        "modelImageUrl": "assets/images/lidar1.jpg",
+        "modelDescription": "Slamtec RPLIDAR A2 M8 360degree 16M 16K Hz lidar sensor 2D laser scanner for robot localization and navigation"
+      },
+      {
+        "modelName": "LTME-02A Indoor and outdoor ",
+        "modelPrice": 499,
+        "modelImageUrl": "assets/images/lidar2.jpg",
+        "modelDescription": "LTME-02A Indoor and outdoor lidar ranging sensor 20m 30KHZ AGV laser radar positioning navigation and obstacle avoidance"
+      },
+      {
+        "modelName": "RPLIDAR S1 TOF 360 Degree",
+        "modelPrice": 789.69,
+        "modelImageUrl": "assets/images/lidar3.jpg",
+        "modelDescription": "SLAMTEC RPLIDAR S1 TOF 360 Degree 40 Meters Lidar Sensor Scanner for Obstacle Avoidance and Navigation of a G V UAV"
+      },
+      {
+        "modelName": "HESAI XT16 XT32 Lidar sensor",
+        "modelPrice": 2350,
+        "modelImageUrl": "assets/images/lidar4.jpg",
+        "modelDescription": "HESAI XT16 XT32 Lidar sensor 16-Channel / 32-Channel 360° Spinning Mid-Range Lidar sensor High Precision Minimum Range of Zero"
+      },
+      {
+        "modelName": "Alpha Prime Velodyne",
+        "modelPrice": 71150,
+        "modelImageUrl": "assets/images/lidar5.jpg",
+        "modelDescription": "Alpha Prime Velodyne VLS-128 high-precision LiDAR"
+      }
+    ]
+  },
+  {
+    "title": "Servo Hub Motor Driver",
+    "initialPricePerItem": 158,
+    "fallbackImageUrl": "assets/images/shmdriver1.jpg",
+    "models": [
+      {
+        "modelName": "Ampstech 24V-48V",
+        "modelPrice": 158,
+        "modelImageUrl": "assets/images/shmdriver1.jpg",
+        "modelDescription": "Ampstech 24V-48V 10-30A 400W CANOPEN RS485 Brushless DC Electric Hub Servo Motor Driver for Patrol Robot"
+      }
+    ]
+  },
+  {
+    "title": "Servo Hub Motor",
+    "initialPricePerItem": 149,
+    "fallbackImageUrl": "assets/images/shm1.jpg",
+    "models": [
+      {
+        "modelName": "6.5 Inch 7nm 170mm Diameter ",
+        "modelPrice": 149,
+        "modelImageUrl": "assets/images/shm1.jpg",
+        "modelDescription": "6.5 Inch 7nm 170mm Diameter Servo Hub Motor Electric Wheel Motor 24V 36V 48V for Agv, Robot, Mobile Robot"
+      },
+      {
+        "modelName": "8 Inch 15nm IP67 Waterproof",
+        "modelPrice": 210,
+        "modelImageUrl": "assets/images/shm2.jpg",
+        "modelDescription": "AMPS 8 Inch 15nm 24V 36V 48V DC Brushless Electric Wheel Hub Servo Motor IP67 Waterproof for Robot Agv"
+      }
+    ]
+  },
+  {
+    "title": "Caster Wheel",
+    "initialPricePerItem": 8,
+    "fallbackImageUrl": "assets/images/casterwheel1.jpg",
+    "models": [
+      {
+        "modelName": "Caster Wheel model 1",
+        "modelPrice": 8,
+        "modelImageUrl": "assets/images/casterwheel1.jpg",
+        "modelDescription": "Caster Wheel"
+      }
+    ]
+  },
+  {
+    "title": "Camera",
+    "initialPricePerItem": 147.1,
+    "fallbackImageUrl": "assets/images/camera1.jpg",
+    "models": [
+      {
+        "modelName": "Industry RGB 4th Gen 3D ROS Camera",
+        "modelPrice": 147.1,
+        "modelImageUrl": "assets/images/camera1.jpg",
+        "modelDescription": "Industry RGB depth camera fourth-generation stereo 3D ROS Depth Camera"
+      },
+      {
+        "modelName": "Intel RealSense D415 ",
+        "modelPrice": 170,
+        "modelImageUrl": "assets/images/camera2.jpg",
+        "modelDescription": "Intel RealSense D415 Stereo Depth Sensing Camera 3D Awareness IMU Virtual Augmented Reality Drones Module Webcam"
+      },
+      {
+        "modelName": "Intel RealSense D435",
+        "modelPrice": 329,
+        "modelImageUrl": "assets/images/camera3.jpg",
+        "modelDescription": "Intel RealSense Depth Camera D435"
+      }
+    ]
+  },
+  {
+    "title": "Computer - Motherboard",
+    "initialPricePerItem": 150,
+    "fallbackImageUrl": "assets/images/motherboard1.jpg",
+    "models": [
+      {
+        "modelName": "Mother Board model 1",
+        "modelPrice": 150,
+        "modelImageUrl": "assets/images/motherboard1.jpg",
+        "modelDescription": "i5-10th gen"
+      }
+    ]
+  },
+  {
+    "title": "Computer - RAM",
+    "initialPricePerItem": 30,
+    "fallbackImageUrl": "assets/images/motherboard2.jpg",
+    "models": [
+      {
+        "modelName": "Mother Board model 2",
+        "modelPrice": 30,
+        "modelImageUrl": "assets/images/motherboard2.jpg",
+        "modelDescription": "RAM 16 GB"
+      }
+    ]
+  },
+  {
+    "title": "Computer - Storage",
+    "initialPricePerItem": 20,
+    "fallbackImageUrl": "assets/images/motherboard3.jpg",
+    "models": [
+      {
+        "modelName": "Mother Board model 3",
+        "modelPrice": 20,
+        "modelImageUrl": "assets/images/motherboard3.jpg",
+        "modelDescription": "SSD NVME 128 GB"
+      }
+    ]
+  },
+  {
+    "title": "Computer - pcie wifi card",
+    "initialPricePerItem": 8,
+    "fallbackImageUrl": "assets/images/motherboard4.jpg",
+    "models": [
+      {
+        "modelName": "Mother Board model 4",
+        "modelPrice": 8,
+        "modelImageUrl": "assets/images/motherboard4.jpg",
+        "modelDescription": "RTL 8822CEmini ( pcie wifi card)"
+      }
+    ]
+  },
+  {
+    "title": "GPS",
+    "initialPricePerItem": 145.9,
+    "fallbackImageUrl": "assets/images/gps1.jpg",
+    "models": [
+      {
+        "modelName": "GPS model 1",
+        "modelPrice": 145.9,
+        "modelImageUrl": "assets/images/gps1.jpg",
+        "modelDescription": "WTRTK-980"
+      },
+      {
+        "modelName": "GPS model 2",
+        "modelPrice": 145.9,
+        "modelImageUrl": "assets/images/gps2.jpg",
+        "modelDescription": "WTRTK-982"
+      },
+      {
+        "modelName": "GPS model 3",
+        "modelPrice": 210.62,
+        "modelImageUrl": "assets/images/gps3.jpg",
+        "modelDescription": "WTRTK-982-LTE-G"
+      },
+      {
+        "modelName": "GPS model 4",
+        "modelPrice": 41,
+        "modelImageUrl": "assets/images/gps4.jpg",
+        "modelDescription": "WitMotion High-Precision | GNSSSOC WTGPS+BD GPS,GLONASS,QZSS,NMEA0183 Module, With Flight Control, Antenna for Arduino"
+      },
+      {
+        "modelName": "GPS model 5",
+        "modelPrice": 124,
+        "modelImageUrl": "assets/images/gps5.jpg",
+        "modelDescription": "Industry-Grade Beidou WTGAHRS2 10-axis GPS-IMU Accelerometer+Gyros+Angle(XY 0.05°)+Magnetometer+Air Pressure+Latitude+Longitude"
+      }
+    ]
+  },
+  {
+    "title": "GPS Accessories",
+    "initialPricePerItem": 83,
+    "fallbackImageUrl": "assets/images/gpsacc1.jpg",
+    "models": [
+      {
+        "modelName": "GPS Accessories model 1",
+        "modelPrice": 83,
+        "modelImageUrl": "assets/images/gpsacc1.jpg",
+        "modelDescription": "RTK Base Station Antenna"
+      },
+      {
+        "modelName": "GPS Accessories model 2",
+        "modelPrice": 79,
+        "modelImageUrl": "assets/images/gpsacc2.jpg",
+        "modelDescription": "RTK Mobile Station Antenna"
+      }
+    ]
+  }
+]

@@ -52,6 +52,8 @@ class _RobotPriceCalculatorViewState extends State<RobotPriceCalculatorView> {
         .toList();
 
     // Get the calculated grand total from the notifier
+    final List<MissingItemInfo> missingItems = totalsNotifier.missingRequiredItems;
+
     final double grandTotal = totalsNotifier.grandTotal;
 
     // If there are no items to show in the invoice, display a SnackBar message
@@ -70,7 +72,7 @@ class _RobotPriceCalculatorViewState extends State<RobotPriceCalculatorView> {
       builder: (BuildContext bottomSheetContext) { // Use a different context name to avoid shadowing
         // DraggableScrollableSheet provides better control over height and drag behavior
         return DraggableScrollableSheet(
-          initialChildSize: 0.6, // Start at 60% of the screen height
+          initialChildSize: 0.8, // Start at 80% of the screen height
           minChildSize: 0.3,   // Minimum height the sheet can be dragged down to
           maxChildSize: 0.9,   // Maximum height the sheet can be dragged up to
           expand: false,       // The sheet does not expand to fill the entire screen initially
@@ -80,7 +82,8 @@ class _RobotPriceCalculatorViewState extends State<RobotPriceCalculatorView> {
             return SingleChildScrollView(
               controller: scrollController, // Pass the controller for drag-to-scroll behavior
               child: InvoiceSlipWidget(
-                items: invoiceItems,
+                selectedItems: invoiceItems,
+                missingItems: missingItems,
                 grandTotal: grandTotal,
               ),
             );
