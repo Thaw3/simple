@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:simple/states/totals_notifier.dart'; // For TotalsNotifier and CardInvoiceData
 import 'package:simple/widgets/robot_price_widgets.dart'; // For ProductCard
-import 'package:simple/services/robot_csv_handler.dart'; // For CsvProductLoader and ProductDataFromCsv
+//import 'package:simple/services/robot_csv_handler.dart'; // For CsvProductLoader and ProductDataFromCsv
+import 'package:simple/services/robot_json_handler.dart';
 import 'package:simple/widgets/invoice_slip_widget.dart'; // For InvoiceSlipWidget
 
 // This StatelessWidget sets up the ChangeNotifierProvider at the root of this page/feature.
@@ -27,15 +28,15 @@ class RobotPriceCalculatorView extends StatefulWidget {
 }
 
 class _RobotPriceCalculatorViewState extends State<RobotPriceCalculatorView> {
-  late Future<List<ProductDataFromCsv>> _productsFuture;
-  final CsvProductLoader _loader = CsvProductLoader();
-  final String csvAssetPath = 'assets/csv/robot_products.csv'; // Define your CSV path
+  late Future<List<Product>> _productsFuture;
+  final ProductLoader _loader = ProductLoader();
+  final String jsonAssetPath = 'assets/data/robot_products.json'; // Define your JSON path
 
-  @override
+  @override 
   void initState() {
     super.initState();
-    // Load product data from CSV when the widget is initialized
-    _productsFuture = _loader.loadProductsFromCsv(csvAssetPath);
+    // Load product data from JSON when the widget is initialized
+    _productsFuture = _loader.loadProducts(jsonAssetPath);
   }
 
   // Method to display the invoice slip using a modal bottom sheet
@@ -59,7 +60,7 @@ class _RobotPriceCalculatorViewState extends State<RobotPriceCalculatorView> {
     // If there are no items to show in the invoice, display a SnackBar message
     if (invoiceItems.isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('No items selected to display in invoice.')),
+            const SnackBar(content: Text('Choose items.')),
         );
         return; // Don't show the bottom sheet if there's nothing to display
     }
@@ -97,7 +98,7 @@ class _RobotPriceCalculatorViewState extends State<RobotPriceCalculatorView> {
   Widget build(BuildContext context) {
     return Scaffold(
       // AppBar was removed as per previous request
-      body: FutureBuilder<List<ProductDataFromCsv>>(
+      body: FutureBuilder<List<Product>>(
         future: _productsFuture,
         builder: (context, snapshot) {
           // Handle loading state
@@ -112,7 +113,7 @@ class _RobotPriceCalculatorViewState extends State<RobotPriceCalculatorView> {
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
-                  "Error loading product data from '$csvAssetPath'.\nPlease check the console for details.\nError: ${snapshot.error}",
+                  "Error loading product data from '$jsonAssetPath'.\nPlease check the console for details.\nError: ${snapshot.error}",
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Colors.red[700]),
                 ),
@@ -124,7 +125,7 @@ class _RobotPriceCalculatorViewState extends State<RobotPriceCalculatorView> {
              return Center(
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Text("No products found in '$csvAssetPath'. Please check the CSV file content."),
+                child: Text("No products found in '$jsonAssetPath'. Please check the JSON file content."),
               )
             );
           }

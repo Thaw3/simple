@@ -278,6 +278,32 @@ class _ProductCardState extends State<ProductCard> {
     }
   }
 
+  void _showFullScreenImage(BuildContext context, String imageUrl) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+          backgroundColor: Colors.transparent, // Makes the dialog background transparent
+          insetPadding: EdgeInsets.all(10), // Padding around the dialog
+          child: GestureDetector(
+            // Tap anywhere on the full-screen image to close it
+            onTap: () => Navigator.of(context).pop(),
+            child: InteractiveViewer( // Enables pinch-to-zoom and pan
+              panEnabled: true,
+              boundaryMargin: EdgeInsets.all(20),
+              minScale: 0.5,
+              maxScale: 4,
+              child: Hero( // The destination of the animation
+                // The tag must be IDENTICAL to the tag of the starting Hero widget
+                tag: imageUrl, 
+                child: Image.network(imageUrl),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
   @override
   Widget build(BuildContext context) {
     // This widget only sends updates to TotalsNotifier, it doesn't need to
@@ -385,43 +411,47 @@ class _ProductCardState extends State<ProductCard> {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(8.0),
-                    child: Image.network(
-                      _selectedModelImageUrl,
-                      height: 120,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
-                      errorBuilder: (context, error, stackTrace) {
-                        return Container(
-                          height: 120,
-                          width: double.infinity,
-                          color: Colors.grey[300],
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(Icons.broken_image, size: 40, color: Colors.grey[600]),
-                              SizedBox(height: 4),
-                              Text("Image not found", style: TextStyle(fontSize: 10, color: Colors.grey[600]))
-                            ],
-                          ),
-                        );
-                      },
-                      loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
-                        if (loadingProgress == null) return child;
-                        return Container(
-                          height: 120,
-                          width: double.infinity,
-                          color: Colors.grey[200],
-                          child: Center(
-                            child: CircularProgressIndicator(
-                              value: loadingProgress.expectedTotalBytes != null
-                                  ? loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes!
-                                  : null,
-                            ),
-                          ),
-                        );
-                      },
+                  Hero(tag: _selectedModelImageUrl, child: GestureDetector(
+                      onTap: () => _showFullScreenImage(context, _selectedModelImageUrl),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: Image.network(
+                          _selectedModelImageUrl,
+                          height: 100,
+                          width: 100,
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) {
+                            return Container(
+                              height: 120,
+                              width: double.infinity,
+                              color: Colors.grey[300],
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.broken_image, size: 40, color: Colors.grey[600]),
+                                  SizedBox(height: 4),
+                                  Text("Image not found", style: TextStyle(fontSize: 10, color: Colors.grey[600]))
+                                ],
+                              ),
+                            );
+                          },
+                          loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                            if (loadingProgress == null) return child;
+                            return Container(
+                              height: 120,
+                              width: double.infinity,
+                              color: Colors.grey[300],
+                              child: Center(
+                                child: CircularProgressIndicator(
+                                  value: loadingProgress.expectedTotalBytes != null
+                                      ? loadingProgress.cumulativeBytesLoaded / (loadingProgress.expectedTotalBytes ?? 1)
+                                      : null,
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(height: 12),

@@ -77,25 +77,18 @@
     ]
   },
   {
-    "title": "Design Po Po robot chassis",
+    "title": "Robot Design chassis",
     "initialPricePerItem": 300,
     "fallbackImageUrl": "assets/images/popo.jpg",
     "models": [
       {
-        "modelName": "Robot Design & Body parts model 1",
+        "modelName": "Po Po robot chassis",
         "modelPrice": 300,
         "modelImageUrl": "assets/images/popo.jpg",
         "modelDescription": "Po Po robot chassis"
-      }
-    ]
-  },
-  {
-    "title": "Design Kilo robot chassis",
-    "initialPricePerItem": 300,
-    "fallbackImageUrl": "assets/images/kilorobot.jpg",
-    "models": [
+      },
       {
-        "modelName": "Robot Design & Body parts model 2",
+        "modelName": "Kilo robot chassis",
         "modelPrice": 300,
         "modelImageUrl": "assets/images/kilorobot.jpg",
         "modelDescription": "Kilo robot chassis"
