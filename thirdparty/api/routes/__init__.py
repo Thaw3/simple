@@ -1,9 +1,11 @@
 from .root_routes import root_bp
 from .sql_routes import sql_bp
+from .mqtt_routes import cam01_bp 
 
 def register_routes(app):
     app.register_blueprint(root_bp)
     app.register_blueprint(sql_bp)
+    app.register_blueprint(cam01_bp)
 # Register all routes in the application
     # This function can be expanded to include more blueprints as needed
     # For example, you could add:

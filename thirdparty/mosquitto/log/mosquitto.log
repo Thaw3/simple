@@ -157,3 +157,252 @@ To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
 1749033618: Sending PINGRESP to auto-FFFF554B-57AD-7860-E25F-4CF8337321A2
 1749033676: Received DISCONNECT from auto-FFFF554B-57AD-7860-E25F-4CF8337321A2
 1749033676: Client auto-FFFF554B-57AD-7860-E25F-4CF8337321A2 disconnected.
+1749383850: mosquitto version 2.0.21 starting
+1749383850: Config loaded from /mosquitto/config/mosquitto.conf.
+1749383850: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1749383850: Opening ipv4 listen socket on port 1883.
+1749383850: Opening ipv6 listen socket on port 1883.
+1749383850: Opening websockets listen socket on port 9001.
+1749383850: mosquitto version 2.0.21 running
+1749383984: New connection from 192.168.65.1:34572 on port 1883.
+1749383984: Client <unknown> disconnected due to protocol error.
+1749383992: New connection from 192.168.65.1:24320 on port 1883.
+1749383992: Sending CONNACK to mqttx_c44f475b (0, 135)
+1749383992: Client mqttx_c44f475b disconnected, not authorised.
+1749384121: mosquitto version 2.0.21 terminating
+1749384121: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1751390664: mosquitto version 2.0.21 starting
+1751390664: Config loaded from /mosquitto/config/mosquitto.conf.
+1751390664: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751390664: Opening ipv4 listen socket on port 1883.
+1751390664: Opening ipv6 listen socket on port 1883.
+1751390664: Opening websockets listen socket on port 9001.
+1751390664: mosquitto version 2.0.21 running
+1751390703: mosquitto version 2.0.21 starting
+1751390703: Config loaded from /mosquitto/config/mosquitto.conf.
+1751390703: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751390703: Opening ipv4 listen socket on port 1883.
+1751390703: Opening ipv6 listen socket on port 1883.
+1751390703: Opening websockets listen socket on port 9001.
+1751390703: mosquitto version 2.0.21 running
+1751390754: mosquitto version 2.0.21 starting
+1751390754: Config loaded from /mosquitto/config/mosquitto.conf.
+1751390754: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751390754: Opening ipv4 listen socket on port 1883.
+1751390754: Opening ipv6 listen socket on port 1883.
+1751390754: Opening websockets listen socket on port 9001.
+1751390754: mosquitto version 2.0.21 running
+1751391086: mosquitto version 2.0.21 starting
+1751391086: Config loaded from /mosquitto/config/mosquitto.conf.
+1751391086: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751391086: Opening ipv4 listen socket on port 1883.
+1751391086: Opening ipv6 listen socket on port 1883.
+1751391086: Opening websockets listen socket on port 9001.
+1751391086: mosquitto version 2.0.21 running
+1751391222: mosquitto version 2.0.21 starting
+1751391222: Config loaded from /mosquitto/config/mosquitto.conf.
+1751391222: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751391222: Opening ipv4 listen socket on port 1883.
+1751391222: Opening ipv6 listen socket on port 1883.
+1751391222: Opening websockets listen socket on port 9001.
+1751391222: mosquitto version 2.0.21 running
+1751391490: mosquitto version 2.0.21 starting
+1751391490: Config loaded from /mosquitto/config/mosquitto.conf.
+1751391490: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751391490: Opening ipv4 listen socket on port 1883.
+1751391490: Opening ipv6 listen socket on port 1883.
+1751391490: Opening websockets listen socket on port 9001.
+1751391490: mosquitto version 2.0.21 running
+1751391551: mosquitto version 2.0.21 starting
+1751391551: Config loaded from /mosquitto/config/mosquitto.conf.
+1751391551: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751391551: Opening ipv4 listen socket on port 1883.
+1751391551: Opening ipv6 listen socket on port 1883.
+1751391551: Opening websockets listen socket on port 9001.
+1751391551: mosquitto version 2.0.21 running
+1751391574: mosquitto version 2.0.21 starting
+1751391574: Config loaded from /mosquitto/config/mosquitto.conf.
+1751391574: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751391574: Opening ipv4 listen socket on port 1883.
+1751391574: Opening ipv6 listen socket on port 1883.
+1751391574: Opening websockets listen socket on port 9001.
+1751391574: mosquitto version 2.0.21 running
+1751391590: mosquitto version 2.0.21 starting
+1751391590: Config loaded from /mosquitto/config/mosquitto.conf.
+1751391590: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751391590: Opening ipv4 listen socket on port 1883.
+1751391590: Opening ipv6 listen socket on port 1883.
+1751391590: Opening websockets listen socket on port 9001.
+1751391590: mosquitto version 2.0.21 running
+1751391607: mosquitto version 2.0.21 starting
+1751391607: Config loaded from /mosquitto/config/mosquitto.conf.
+1751391607: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751391607: Opening ipv4 listen socket on port 1883.
+1751391607: Opening ipv6 listen socket on port 1883.
+1751391607: Opening websockets listen socket on port 9001.
+1751391607: mosquitto version 2.0.21 running
+1751391689: mosquitto version 2.0.21 starting
+1751391689: Config loaded from /mosquitto/config/mosquitto.conf.
+1751391689: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751391689: Opening ipv4 listen socket on port 1883.
+1751391689: Opening ipv6 listen socket on port 1883.
+1751391689: Opening websockets listen socket on port 9001.
+1751391689: mosquitto version 2.0.21 running
+1751391712: mosquitto version 2.0.21 starting
+1751391712: Config loaded from /mosquitto/config/mosquitto.conf.
+1751391712: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751391712: Opening ipv4 listen socket on port 1883.
+1751391712: Opening ipv6 listen socket on port 1883.
+1751391712: Opening websockets listen socket on port 9001.
+1751391712: mosquitto version 2.0.21 running
+1751391737: mosquitto version 2.0.21 starting
+1751391737: Config loaded from /mosquitto/config/mosquitto.conf.
+1751391737: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751391737: Opening ipv4 listen socket on port 1883.
+1751391737: Opening ipv6 listen socket on port 1883.
+1751391737: Opening websockets listen socket on port 9001.
+1751391737: mosquitto version 2.0.21 running
+1751391782: mosquitto version 2.0.21 starting
+1751391782: Config loaded from /mosquitto/config/mosquitto.conf.
+1751391782: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751391782: Opening ipv4 listen socket on port 1883.
+1751391782: Opening ipv6 listen socket on port 1883.
+1751391782: Opening websockets listen socket on port 9001.
+1751391782: mosquitto version 2.0.21 running
+1751391896: mosquitto version 2.0.21 starting
+1751391896: Config loaded from /mosquitto/config/mosquitto.conf.
+1751391896: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751391896: Opening ipv4 listen socket on port 1883.
+1751391896: Opening ipv6 listen socket on port 1883.
+1751391896: Opening websockets listen socket on port 9001.
+1751391896: mosquitto version 2.0.21 running
+1751391999: mosquitto version 2.0.21 starting
+1751391999: Config loaded from /mosquitto/config/mosquitto.conf.
+1751391999: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751391999: Opening ipv4 listen socket on port 1883.
+1751391999: Opening ipv6 listen socket on port 1883.
+1751391999: Opening websockets listen socket on port 9001.
+1751391999: mosquitto version 2.0.21 running
+1751392043: mosquitto version 2.0.21 starting
+1751392043: Config loaded from /mosquitto/config/mosquitto.conf.
+1751392043: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751392043: Opening ipv4 listen socket on port 1883.
+1751392043: Opening ipv6 listen socket on port 1883.
+1751392043: Opening websockets listen socket on port 9001.
+1751392043: mosquitto version 2.0.21 running
+1751392121: mosquitto version 2.0.21 starting
+1751392121: Config loaded from /mosquitto/config/mosquitto.conf.
+1751392121: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751392121: Opening ipv4 listen socket on port 1883.
+1751392121: Opening ipv6 listen socket on port 1883.
+1751392121: Opening websockets listen socket on port 9001.
+1751392121: mosquitto version 2.0.21 running
+1751392535: mosquitto version 2.0.21 starting
+1751392535: Config loaded from /mosquitto/config/mosquitto.conf.
+1751392535: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751392535: Opening ipv4 listen socket on port 1883.
+1751392535: Opening ipv6 listen socket on port 1883.
+1751392535: Opening websockets listen socket on port 9001.
+1751392535: mosquitto version 2.0.21 running
+1751392783: New connection from 192.168.65.1:53488 on port 1883.
+1751392783: Sending CONNACK to camera01 (0, 135)
+1751392783: Client camera01 disconnected, not authorised.
+1751392792: New connection from 192.168.65.1:27285 on port 1883.
+1751392792: Sending CONNACK to flutter (0, 135)
+1751392792: Client flutter disconnected, not authorised.
+1751392800: New connection from 192.168.65.1:59092 on port 1883.
+1751392800: Sending CONNACK to flutter (0, 135)
+1751392800: Client flutter disconnected, not authorised.
+1751392815: New connection from 192.168.65.1:18075 on port 1883.
+1751392815: Sending CONNACK to flutter (0, 135)
+1751392815: Client flutter disconnected, not authorised.
+1751392830: New connection from 192.168.65.1:46422 on port 1883.
+1751392830: Sending CONNACK to mqttx_557f69e5 (0, 135)
+1751392830: Client mqttx_557f69e5 disconnected, not authorised.
+1751392917: New connection from 192.168.65.1:45212 on port 1883.
+1751392917: Client <unknown> disconnected due to protocol error.
+1751393141: New connection from 192.168.65.1:25368 on port 1883.
+1751393141: Sending CONNACK to auto-EA1BD5CB-AB36-E715-8BE4-861E8CDA9618 (0, 5)
+1751393141: Client auto-EA1BD5CB-AB36-E715-8BE4-861E8CDA9618 disconnected, not authorised.
+1751393148: New connection from 192.168.65.1:16132 on port 1883.
+1751393148: Sending CONNACK to auto-69E802FB-1C09-8E41-6FAD-217F491BDF03 (0, 5)
+1751393148: Client auto-69E802FB-1C09-8E41-6FAD-217F491BDF03 disconnected, not authorised.
+1751393168: New connection from 192.168.65.1:47146 on port 1883.
+1751393168: Sending CONNACK to auto-085513B8-D13D-4D38-B8E2-AAC1DC54851D (0, 5)
+1751393168: Client auto-085513B8-D13D-4D38-B8E2-AAC1DC54851D disconnected, not authorised.
+1751393534: mosquitto version 2.0.21 terminating
+1751393534: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1751393711: mosquitto version 2.0.21 starting
+1751393711: Config loaded from /mosquitto/config/mosquitto.conf.
+1751393711: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1751393711: Opening ipv4 listen socket on port 1883.
+1751393711: Opening ipv6 listen socket on port 1883.
+1751393711: Opening websockets listen socket on port 9001.
+1751393711: mosquitto version 2.0.21 running
+1751393722: New connection from 192.168.65.1:17240 on port 1883.
+1751393722: Sending CONNACK to auto-7BD1321A-DBC3-0A43-98F0-FD1473617889 (0, 5)
+1751393722: Client auto-7BD1321A-DBC3-0A43-98F0-FD1473617889 disconnected, not authorised.
+1751393729: New connection from 192.168.65.1:51211 on port 1883.
+1751393729: New client connected from 192.168.65.1:51211 as auto-52DD9E12-F4B8-CFE8-B8CE-69BE4774790A (p2, c1, k60, u'flutter').
+1751393729: No will message specified.
+1751393729: Sending CONNACK to auto-52DD9E12-F4B8-CFE8-B8CE-69BE4774790A (0, 0)
+1751393729: Received PUBLISH from auto-52DD9E12-F4B8-CFE8-B8CE-69BE4774790A (d0, q0, r0, m0, 'simple/test', ... (18 bytes))
+1751393729: Received DISCONNECT from auto-52DD9E12-F4B8-CFE8-B8CE-69BE4774790A
+1751393729: Client auto-52DD9E12-F4B8-CFE8-B8CE-69BE4774790A disconnected.
+1751393800: New connection from 192.168.65.1:22019 on port 1883.
+1751393800: New client connected from 192.168.65.1:22019 as auto-6EC98485-CA88-6E43-FC98-39AC3A34458C (p2, c1, k60, u'flutter').
+1751393800: No will message specified.
+1751393800: Sending CONNACK to auto-6EC98485-CA88-6E43-FC98-39AC3A34458C (0, 0)
+1751393800: Received SUBSCRIBE from auto-6EC98485-CA88-6E43-FC98-39AC3A34458C
+1751393800: 	simple/test (QoS 2)
+1751393800: auto-6EC98485-CA88-6E43-FC98-39AC3A34458C 2 simple/test
+1751393800: Sending SUBACK to auto-6EC98485-CA88-6E43-FC98-39AC3A34458C
+1751393802: New connection from 192.168.65.1:27729 on port 1883.
+1751393802: New client connected from 192.168.65.1:27729 as auto-4D58ECCD-5279-E069-F48E-B6505DB1E696 (p2, c1, k60, u'flutter').
+1751393802: No will message specified.
+1751393802: Sending CONNACK to auto-4D58ECCD-5279-E069-F48E-B6505DB1E696 (0, 0)
+1751393802: Received PUBLISH from auto-4D58ECCD-5279-E069-F48E-B6505DB1E696 (d0, q0, r0, m0, 'simple/test', ... (18 bytes))
+1751393802: Sending PUBLISH to auto-6EC98485-CA88-6E43-FC98-39AC3A34458C (d0, q0, r0, m0, 'simple/test', ... (18 bytes))
+1751393802: Received DISCONNECT from auto-4D58ECCD-5279-E069-F48E-B6505DB1E696
+1751393802: Client auto-4D58ECCD-5279-E069-F48E-B6505DB1E696 disconnected.
+1751393805: New connection from 192.168.65.1:33549 on port 1883.
+1751393805: New client connected from 192.168.65.1:33549 as auto-84660427-E282-B7E7-EFAD-C295D483829C (p2, c1, k60, u'flutter').
+1751393805: No will message specified.
+1751393805: Sending CONNACK to auto-84660427-E282-B7E7-EFAD-C295D483829C (0, 0)
+1751393805: Received PUBLISH from auto-84660427-E282-B7E7-EFAD-C295D483829C (d0, q0, r0, m0, 'simple/test', ... (18 bytes))
+1751393805: Sending PUBLISH to auto-6EC98485-CA88-6E43-FC98-39AC3A34458C (d0, q0, r0, m0, 'simple/test', ... (18 bytes))
+1751393805: Received DISCONNECT from auto-84660427-E282-B7E7-EFAD-C295D483829C
+1751393805: Client auto-84660427-E282-B7E7-EFAD-C295D483829C disconnected.
+1751393808: New connection from 192.168.65.1:33921 on port 1883.
+1751393808: New client connected from 192.168.65.1:33921 as auto-418789A3-AB08-C7CE-9DFB-E154E9D4AC3C (p2, c1, k60, u'flutter').
+1751393808: No will message specified.
+1751393808: Sending CONNACK to auto-418789A3-AB08-C7CE-9DFB-E154E9D4AC3C (0, 0)
+1751393808: Received PUBLISH from auto-418789A3-AB08-C7CE-9DFB-E154E9D4AC3C (d0, q0, r0, m0, 'simple/test', ... (18 bytes))
+1751393808: Sending PUBLISH to auto-6EC98485-CA88-6E43-FC98-39AC3A34458C (d0, q0, r0, m0, 'simple/test', ... (18 bytes))
+1751393808: Received DISCONNECT from auto-418789A3-AB08-C7CE-9DFB-E154E9D4AC3C
+1751393808: Client auto-418789A3-AB08-C7CE-9DFB-E154E9D4AC3C disconnected.
+1751393810: Received DISCONNECT from auto-6EC98485-CA88-6E43-FC98-39AC3A34458C
+1751393810: Client auto-6EC98485-CA88-6E43-FC98-39AC3A34458C disconnected.
+1751393945: mosquitto version 2.0.21 terminating
+1751393945: Saving in-memory database to /mosquitto/data//mosquitto.db.
