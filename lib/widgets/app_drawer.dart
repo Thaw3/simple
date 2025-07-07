@@ -32,9 +32,10 @@ class AppDrawer extends StatelessWidget {
               onItemSelected(0);
             },
           ),
+      
           ListTile(
-            leading: Icon(Icons.photo),
-            title: Text('Image Classification'),
+            leading: Icon(Icons.calculate_outlined),
+            title: Text('Robot Price Calculator'),
             selected: selectedIndex == 1,
             onTap: () {
               Navigator.pop(context);
@@ -42,8 +43,8 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Robot Price Calculator'),
+            leading: Icon(Icons.storage),
+            title: Text('Database Connection'),
             selected: selectedIndex == 2,
             onTap: () {
               Navigator.pop(context);
@@ -51,12 +52,21 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Database Connection'),
+            leading: Icon(Icons.private_connectivity),
+            title: Text('MQTT Connection'),
             selected: selectedIndex == 3,
             onTap: () {
               Navigator.pop(context);
               onItemSelected(3);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.analytics_outlined),
+            title: Text('AI Model Prediction'),
+            selected: selectedIndex == 4,
+            onTap: () {
+              Navigator.pop(context);
+              onItemSelected(4);
             },
           ),
         ],

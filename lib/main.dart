@@ -4,8 +4,10 @@ import 'package:simple/pages/database_connection.dart';
 import 'package:simple/pages/homepage.dart';
 import 'package:simple/widgets/database_provider.dart';
 import 'package:simple/widgets/app_drawer.dart';
-import 'package:simple/pages/image_classification.dart';
 import 'package:simple/pages/robot_price_calculator.dart';
+import 'package:simple/pages/mqtt_client_page.dart';
+import 'package:simple/widgets/mqtt_provider.dart';
+import 'package:simple/pages/ai_model_predict_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,6 +26,8 @@ class _MyAppState extends State<MyApp> {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => DatabaseProvider()),
+        ChangeNotifierProvider(create: (context) => MqttConnectionProvider()),
+        // Provider တစ်ခုထည့်ချင်ရင် ဒီမှာထည့်ပါ။
       ],
       child: MaterialApp(
         title: 'Main Page with Drawer',
@@ -42,10 +46,10 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  int _selectedIndex = 2;
+  int _selectedIndex = 1;
 
-  final List<Widget> _pages = [HomeScreen(), ImageClassification(), RobotPriceCalculatorPage(), DatabaseConnection()];
-
+  final List<Widget> _pages = [HomeScreen(), RobotPriceCalculatorPage(), DatabaseConnection(), MqttClientPage(), CameraScreen()];
+  // Page တစ်ခုထည့်ချင်ရင် ဒီမှာထည့်ပါ။
   void _onDrawerItemSelected(int index) {
     setState(() {
       _selectedIndex = index;
@@ -54,9 +58,11 @@ class _MainPageState extends State<MainPage> {
   
   final List<String> _titles = [
     'Home',
-    'Image Classification',
     'Robot Price Calculator',
     'Database Connection',
+    'MQTT Connection',
+    'AI Model Prediction',
+    // Page တစ်ခုထည့်ချင်ရင် ဒီမှာထည့်ပါ။
   ];
 
   @override
