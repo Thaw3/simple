@@ -6,8 +6,7 @@ import 'package:simple/widgets/database_provider.dart';
 import 'package:simple/widgets/app_drawer.dart';
 import 'package:simple/pages/robot_price_calculator.dart';
 import 'package:simple/pages/mqtt_client_page.dart';
-import 'package:simple/widgets/mqtt_provider.dart';
-import 'package:simple/pages/ai_model_predict_page.dart';
+import 'package:simple/widgets/mqtt_api_connection_provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,7 +25,9 @@ class _MyAppState extends State<MyApp> {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => DatabaseProvider()),
-        ChangeNotifierProvider(create: (context) => MqttConnectionProvider()),
+        ChangeNotifierProvider(
+          create: (context) => APIConnectionProvider(),
+        ), // For MQTT API connection
         // Provider တစ်ခုထည့်ချင်ရင် ဒီမှာထည့်ပါ။
       ],
       child: MaterialApp(
@@ -48,14 +49,19 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _selectedIndex = 1;
 
-  final List<Widget> _pages = [HomeScreen(), RobotPriceCalculatorPage(), DatabaseConnection(), MqttClientPage(), CameraScreen()];
+  final List<Widget> _pages = [
+    HomeScreen(),
+    RobotPriceCalculatorPage(),
+    DatabaseConnection(),
+    MqttClientPage(),
+  ];
   // Page တစ်ခုထည့်ချင်ရင် ဒီမှာထည့်ပါ။
   void _onDrawerItemSelected(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
-  
+
   final List<String> _titles = [
     'Home',
     'Robot Price Calculator',
@@ -86,6 +92,7 @@ class _MainPageState extends State<MainPage> {
       body: _pages[_selectedIndex],
     );
   }
+
   // IconData _getAppBarIcon(int index) {
   //   switch (index) {
   //     case 0:

@@ -32,7 +32,7 @@ class AppDrawer extends StatelessWidget {
               onItemSelected(0);
             },
           ),
-      
+
           ListTile(
             leading: Icon(Icons.calculate_outlined),
             title: Text('Robot Price Calculator'),
@@ -58,15 +58,6 @@ class AppDrawer extends StatelessWidget {
             onTap: () {
               Navigator.pop(context);
               onItemSelected(3);
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.analytics_outlined),
-            title: Text('AI Model Prediction'),
-            selected: selectedIndex == 4,
-            onTap: () {
-              Navigator.pop(context);
-              onItemSelected(4);
             },
           ),
         ],
