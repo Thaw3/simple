@@ -60,6 +60,15 @@ class AppDrawer extends StatelessWidget {
               onItemSelected(3);
             },
           ),
+          ListTile(
+            leading: Icon(Icons.camera_alt),
+            title: Text('AI Model Prediction'),
+            selected: selectedIndex == 4,
+            onTap: () {
+              Navigator.pop(context);
+              onItemSelected(4);
+            },
+          ),
         ],
       ),
     );

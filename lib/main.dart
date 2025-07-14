@@ -7,6 +7,8 @@ import 'package:simple/widgets/app_drawer.dart';
 import 'package:simple/pages/robot_price_calculator.dart';
 import 'package:simple/pages/mqtt_client_page.dart';
 import 'package:simple/widgets/mqtt_api_connection_provider.dart';
+import 'package:simple/pages/ai_model_predict_ui.dart';
+import 'package:simple/states/ai_model_predict_provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,13 +27,14 @@ class _MyAppState extends State<MyApp> {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => DatabaseProvider()),
+        ChangeNotifierProvider(create: (context) => APIConnectionProvider()),
         ChangeNotifierProvider(
-          create: (context) => APIConnectionProvider(),
+          create: (context) => CameraProvider(),
         ), // For MQTT API connection
         // Provider တစ်ခုထည့်ချင်ရင် ဒီမှာထည့်ပါ။
       ],
       child: MaterialApp(
-        title: 'Main Page with Drawer',
+        title: 'ROM Dynamics Simple',
         theme: ThemeData(primarySwatch: Colors.blue),
         home: MainPage(),
       ),
@@ -54,6 +57,7 @@ class _MainPageState extends State<MainPage> {
     RobotPriceCalculatorPage(),
     DatabaseConnection(),
     MqttClientPage(),
+    CameraScreen(), //For AI model prediction
   ];
   // Page တစ်ခုထည့်ချင်ရင် ဒီမှာထည့်ပါ။
   void _onDrawerItemSelected(int index) {
