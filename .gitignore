@@ -30,12 +30,7 @@ build/
 web/.dart_tool/
 web/build/
 
-# Python Cache
-thirdparty/api/__pycache__/
-thirdparty/api/routes/__pycache__/
-thirdparty/api/services/__pycache__/
-thirdparty/mosquitto/data/
-thirdparty/mosquitto/log/
-thirdparty/mosquitto/logs/
-
 test/
+
+# remove pycache folders
+thirdparty
