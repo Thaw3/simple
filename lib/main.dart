@@ -8,6 +8,8 @@ import 'package:simple/pages/robot_price_calculator.dart';
 import 'package:simple/pages/mqtt_client_page.dart';
 import 'package:simple/widgets/mqtt_api_connection_provider.dart';
 import 'package:simple/pages/ai_model_predict_ui.dart';
+import 'package:simple/pages/monitor_mqtt_ui.dart';
+import 'package:simple/pages/data_set_collector.dart';
 
 void main() {
   runApp(MyApp());
@@ -56,6 +58,8 @@ class _MainPageState extends State<MainPage> {
     DatabaseConnection(),
     MqttClientPage(),
     CameraScreen(), // AI Model Prediction page
+    MonitorMqttUi(),
+    DatasetCollector(), // Monitor MQTT page
   ];
   // Page တစ်ခုထည့်ချင်ရင် ဒီမှာထည့်ပါ။
   void _onDrawerItemSelected(int index) {
@@ -70,6 +74,8 @@ class _MainPageState extends State<MainPage> {
     'Database Connection',
     'MQTT Connection',
     'AI Model Prediction',
+    'Monitor MQTT',
+    'Dataset Collection',
     // Page တစ်ခုထည့်ချင်ရင် ဒီမှာထည့်ပါ။
   ];
 

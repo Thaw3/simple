@@ -69,6 +69,24 @@ class AppDrawer extends StatelessWidget {
               onItemSelected(4);
             },
           ),
+          ListTile(
+            leading: Icon(Icons.message_sharp),
+            title: Text('Monitor MQTT'),
+            selected: selectedIndex == 5,
+            onTap: () {
+              Navigator.pop(context);
+              onItemSelected(5);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.dataset_linked),
+            title: Text('Dataset Collection'),
+            selected: selectedIndex == 6,
+            onTap: () {
+              Navigator.pop(context);
+              onItemSelected(6);
+            },
+          ),
         ],
       ),
     );
