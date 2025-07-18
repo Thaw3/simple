@@ -597,3 +597,314 @@ To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
 1752829744: Opening ipv6 listen socket on port 1883.
 1752829744: Opening websockets listen socket on port 9001.
 1752829744: mosquitto version 2.0.22 running
+1752831544: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1752831868: mosquitto version 2.0.22 starting
+1752831868: Config loaded from /mosquitto/config/mosquitto.conf.
+1752831868: Warning: File /mosquitto/config/password_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password_file`.
+1752831868: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1752831868: Opening ipv4 listen socket on port 1883.
+1752831868: Opening ipv6 listen socket on port 1883.
+1752831868: Opening websockets listen socket on port 9001.
+1752831868: mosquitto version 2.0.22 running
+1752831927: New connection from 172.18.0.2:51795 on port 1883.
+1752831927: New client connected from 172.18.0.2:51795 as auto-0944824D-8EAF-AE75-5795-02E9716502D4 (p2, c1, k60, u'flutter').
+1752831927: No will message specified.
+1752831927: Sending CONNACK to auto-0944824D-8EAF-AE75-5795-02E9716502D4 (0, 0)
+1752831927: Client auto-0944824D-8EAF-AE75-5795-02E9716502D4 closed its connection.
+1752832124: New connection from 172.18.0.1:54246 on port 1883.
+1752832124: New client connected from 172.18.0.1:54246 as mqttx_f1fa166c (p5, c1, k60, u'flutter').
+1752832124: No will message specified.
+1752832124: Sending CONNACK to mqttx_f1fa166c (0, 0)
+1752832141: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832192: New connection from 172.18.0.2:54629 on port 1883.
+1752832192: New client connected from 172.18.0.2:54629 as auto-ADDF242D-152D-A66F-2C41-AB9D4C133F46 (p2, c1, k60, u'flutter').
+1752832192: No will message specified.
+1752832192: Sending CONNACK to auto-ADDF242D-152D-A66F-2C41-AB9D4C133F46 (0, 0)
+1752832192: Client auto-ADDF242D-152D-A66F-2C41-AB9D4C133F46 closed its connection.
+1752832201: Received PINGREQ from mqttx_f1fa166c
+1752832201: Sending PINGRESP to mqttx_f1fa166c
+1752832261: Received PINGREQ from mqttx_f1fa166c
+1752832261: Sending PINGRESP to mqttx_f1fa166c
+1752832264: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832277: New connection from 172.18.0.2:34239 on port 1883.
+1752832277: New client connected from 172.18.0.2:34239 as auto-A8D18C08-BEE9-EB88-2726-A7B52E3ED61D (p2, c1, k60, u'flutter').
+1752832277: No will message specified.
+1752832277: Sending CONNACK to auto-A8D18C08-BEE9-EB88-2726-A7B52E3ED61D (0, 0)
+1752832277: Client auto-A8D18C08-BEE9-EB88-2726-A7B52E3ED61D closed its connection.
+1752832293: New connection from 172.18.0.2:50145 on port 1883.
+1752832293: New client connected from 172.18.0.2:50145 as auto-DF8BFF9D-FE32-3048-9892-C19CAAF64BDF (p2, c1, k60, u'flutter').
+1752832293: No will message specified.
+1752832293: Sending CONNACK to auto-DF8BFF9D-FE32-3048-9892-C19CAAF64BDF (0, 0)
+1752832293: Client auto-DF8BFF9D-FE32-3048-9892-C19CAAF64BDF closed its connection.
+1752832324: Received PINGREQ from mqttx_f1fa166c
+1752832324: Sending PINGRESP to mqttx_f1fa166c
+1752832384: Received PINGREQ from mqttx_f1fa166c
+1752832384: Sending PINGRESP to mqttx_f1fa166c
+1752832444: Received PINGREQ from mqttx_f1fa166c
+1752832444: Sending PINGRESP to mqttx_f1fa166c
+1752832451: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832461: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (3 bytes))
+1752832464: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (3 bytes))
+1752832465: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (3 bytes))
+1752832465: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (3 bytes))
+1752832466: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (3 bytes))
+1752832467: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (3 bytes))
+1752832471: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (3 bytes))
+1752832472: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (3 bytes))
+1752832472: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (3 bytes))
+1752832474: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (3 bytes))
+1752832475: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (3 bytes))
+1752832483: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (3 bytes))
+1752832497: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832497: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832498: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832498: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832499: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832559: Received PINGREQ from mqttx_f1fa166c
+1752832559: Sending PINGRESP to mqttx_f1fa166c
+1752832619: Received PINGREQ from mqttx_f1fa166c
+1752832619: Sending PINGRESP to mqttx_f1fa166c
+1752832679: Received PINGREQ from mqttx_f1fa166c
+1752832679: Sending PINGRESP to mqttx_f1fa166c
+1752832739: Received PINGREQ from mqttx_f1fa166c
+1752832739: Sending PINGRESP to mqttx_f1fa166c
+1752832772: mosquitto version 2.0.22 starting
+1752832772: Config loaded from /mosquitto/config/mosquitto.conf.
+1752832772: Warning: File /mosquitto/config/password_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password_file`.
+1752832772: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1752832772: Opening ipv4 listen socket on port 1883.
+1752832772: Opening ipv6 listen socket on port 1883.
+1752832772: Opening websockets listen socket on port 9001.
+1752832772: mosquitto version 2.0.22 running
+1752832775: New connection from 172.18.0.1:50644 on port 1883.
+1752832775: New client connected from 172.18.0.1:50644 as mqttx_f1fa166c (p5, c1, k60, u'flutter').
+1752832775: No will message specified.
+1752832775: Sending CONNACK to mqttx_f1fa166c (0, 0)
+1752832783: New connection from 172.18.0.2:51931 on port 1883.
+1752832783: New client connected from 172.18.0.2:51931 as auto-7354C033-9C52-7954-DE48-2A856B68B766 (p2, c1, k60, u'flutter').
+1752832783: No will message specified.
+1752832783: Sending CONNACK to auto-7354C033-9C52-7954-DE48-2A856B68B766 (0, 0)
+1752832783: Client auto-7354C033-9C52-7954-DE48-2A856B68B766 closed its connection.
+1752832797: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832799: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832800: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832801: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832802: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832802: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832803: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832804: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832804: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832804: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832804: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832806: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832807: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832808: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832809: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832843: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832843: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832844: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832844: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832844: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832845: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832845: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832845: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832846: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832846: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832846: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832846: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832847: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752832907: Received PINGREQ from mqttx_f1fa166c
+1752832907: Sending PINGRESP to mqttx_f1fa166c
+1752832967: Received PINGREQ from mqttx_f1fa166c
+1752832967: Sending PINGRESP to mqttx_f1fa166c
+1752833027: Received PINGREQ from mqttx_f1fa166c
+1752833027: Sending PINGRESP to mqttx_f1fa166c
+1752833087: Received PINGREQ from mqttx_f1fa166c
+1752833087: Sending PINGRESP to mqttx_f1fa166c
+1752833131: Received DISCONNECT from mqttx_f1fa166c
+1752833131: Client mqttx_f1fa166c disconnected.
+1752833143: mosquitto version 2.0.22 starting
+1752833143: Config loaded from /mosquitto/config/mosquitto.conf.
+1752833143: Warning: File /mosquitto/config/password_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password_file`.
+1752833143: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1752833143: Opening ipv4 listen socket on port 1883.
+1752833143: Opening ipv6 listen socket on port 1883.
+1752833143: Opening websockets listen socket on port 9001.
+1752833143: mosquitto version 2.0.22 running
+1752833179: New connection from 172.18.0.1:59764 on port 1883.
+1752833179: New client connected from 172.18.0.1:59764 as mqttx_f1fa166c (p5, c1, k60, u'flutter').
+1752833179: No will message specified.
+1752833179: Sending CONNACK to mqttx_f1fa166c (0, 0)
+1752833215: New connection from 172.18.0.2:36719 on port 1883.
+1752833215: New client connected from 172.18.0.2:36719 as auto-8FEF9D8D-F458-B271-A187-1D2D7E3C3FA6 (p2, c1, k60, u'flutter').
+1752833215: No will message specified.
+1752833215: Sending CONNACK to auto-8FEF9D8D-F458-B271-A187-1D2D7E3C3FA6 (0, 0)
+1752833215: Client auto-8FEF9D8D-F458-B271-A187-1D2D7E3C3FA6 closed its connection.
+1752833225: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752833230: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752833290: Received PINGREQ from mqttx_f1fa166c
+1752833290: Sending PINGRESP to mqttx_f1fa166c
+1752833350: Received PINGREQ from mqttx_f1fa166c
+1752833350: Sending PINGRESP to mqttx_f1fa166c
+1752833410: Received PINGREQ from mqttx_f1fa166c
+1752833410: Sending PINGRESP to mqttx_f1fa166c
+1752833470: Received PINGREQ from mqttx_f1fa166c
+1752833470: Sending PINGRESP to mqttx_f1fa166c
+1752833530: Received PINGREQ from mqttx_f1fa166c
+1752833530: Sending PINGRESP to mqttx_f1fa166c
+1752833590: Received PINGREQ from mqttx_f1fa166c
+1752833590: Sending PINGRESP to mqttx_f1fa166c
+1752833650: Received PINGREQ from mqttx_f1fa166c
+1752833650: Sending PINGRESP to mqttx_f1fa166c
+1752833710: Received PINGREQ from mqttx_f1fa166c
+1752833710: Sending PINGRESP to mqttx_f1fa166c
+1752833770: Received PINGREQ from mqttx_f1fa166c
+1752833770: Sending PINGRESP to mqttx_f1fa166c
+1752833830: Received PINGREQ from mqttx_f1fa166c
+1752833830: Sending PINGRESP to mqttx_f1fa166c
+1752833863: mosquitto version 2.0.22 starting
+1752833863: Config loaded from /mosquitto/config/mosquitto.conf.
+1752833863: Warning: File /mosquitto/config/password_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password_file`.
+1752833863: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1752833863: Opening ipv4 listen socket on port 1883.
+1752833863: Opening ipv6 listen socket on port 1883.
+1752833863: Opening websockets listen socket on port 9001.
+1752833863: mosquitto version 2.0.22 running
+1752833866: New connection from 172.18.0.1:43164 on port 1883.
+1752833866: New client connected from 172.18.0.1:43164 as mqttx_f1fa166c (p5, c1, k60, u'flutter').
+1752833866: No will message specified.
+1752833866: Sending CONNACK to mqttx_f1fa166c (0, 0)
+1752833926: Received PINGREQ from mqttx_f1fa166c
+1752833926: Sending PINGRESP to mqttx_f1fa166c
+1752833975: mosquitto version 2.0.22 starting
+1752833975: Config loaded from /mosquitto/config/mosquitto.conf.
+1752833975: Warning: File /mosquitto/config/password_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password_file`.
+1752833975: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1752833975: Opening ipv4 listen socket on port 1883.
+1752833975: Opening ipv6 listen socket on port 1883.
+1752833975: Opening websockets listen socket on port 9001.
+1752833975: mosquitto version 2.0.22 running
+1752833978: New connection from 172.18.0.1:37272 on port 1883.
+1752833978: New client connected from 172.18.0.1:37272 as mqttx_f1fa166c (p5, c1, k60, u'flutter').
+1752833978: No will message specified.
+1752833978: Sending CONNACK to mqttx_f1fa166c (0, 0)
+1752833984: New connection from 172.18.0.2:46969 on port 1883.
+1752833984: New client connected from 172.18.0.2:46969 as auto-C2275DE8-09CB-ECFD-6CD6-4553E7049863 (p2, c1, k60, u'flutter').
+1752833984: No will message specified.
+1752833984: Sending CONNACK to auto-C2275DE8-09CB-ECFD-6CD6-4553E7049863 (0, 0)
+1752833984: Client auto-C2275DE8-09CB-ECFD-6CD6-4553E7049863 closed its connection.
+1752834013: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752834066: New connection from 172.18.0.2:41297 on port 1883.
+1752834066: New client connected from 172.18.0.2:41297 as auto-96892F54-99B2-EA6A-09B1-FA5AD98E08A1 (p2, c1, k60, u'flutter').
+1752834066: No will message specified.
+1752834066: Sending CONNACK to auto-96892F54-99B2-EA6A-09B1-FA5AD98E08A1 (0, 0)
+1752834066: Client auto-96892F54-99B2-EA6A-09B1-FA5AD98E08A1 closed its connection.
+1752834068: New connection from 172.18.0.2:34245 on port 1883.
+1752834068: New client connected from 172.18.0.2:34245 as auto-FBE5686C-6ABA-55C3-9362-F1832921DF61 (p2, c1, k60, u'flutter').
+1752834068: No will message specified.
+1752834068: Sending CONNACK to auto-FBE5686C-6ABA-55C3-9362-F1832921DF61 (0, 0)
+1752834068: Client auto-FBE5686C-6ABA-55C3-9362-F1832921DF61 closed its connection.
+1752834073: Received PINGREQ from mqttx_f1fa166c
+1752834073: Sending PINGRESP to mqttx_f1fa166c
+1752834090: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752834150: Received PINGREQ from mqttx_f1fa166c
+1752834150: Sending PINGRESP to mqttx_f1fa166c
+1752834210: Received PINGREQ from mqttx_f1fa166c
+1752834210: Sending PINGRESP to mqttx_f1fa166c
+1752834270: Received PINGREQ from mqttx_f1fa166c
+1752834270: Sending PINGRESP to mqttx_f1fa166c
+1752834321: mosquitto version 2.0.22 starting
+1752834321: Config loaded from /mosquitto/config/mosquitto.conf.
+1752834321: Warning: File /mosquitto/config/password_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password_file`.
+1752834321: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1752834321: Opening ipv4 listen socket on port 1883.
+1752834321: Opening ipv6 listen socket on port 1883.
+1752834321: Opening websockets listen socket on port 9001.
+1752834321: mosquitto version 2.0.22 running
+1752834324: New connection from 172.18.0.1:50090 on port 1883.
+1752834324: New client connected from 172.18.0.1:50090 as mqttx_f1fa166c (p5, c1, k60, u'flutter').
+1752834324: No will message specified.
+1752834324: Sending CONNACK to mqttx_f1fa166c (0, 0)
+1752834332: New connection from 172.18.0.2:48811 on port 1883.
+1752834332: New client connected from 172.18.0.2:48811 as auto-5549B2AB-2C53-0892-0924-B1B16B55082A (p2, c1, k60, u'flutter').
+1752834332: No will message specified.
+1752834332: Sending CONNACK to auto-5549B2AB-2C53-0892-0924-B1B16B55082A (0, 0)
+1752834332: Client auto-5549B2AB-2C53-0892-0924-B1B16B55082A closed its connection.
+1752834353: Received DISCONNECT from mqttx_f1fa166c
+1752834353: Client mqttx_f1fa166c disconnected.
+1752834355: New connection from 172.18.0.1:56190 on port 1883.
+1752834355: New client connected from 172.18.0.1:56190 as mqttx_f1fa166c (p5, c1, k60, u'flutter').
+1752834355: No will message specified.
+1752834355: Sending CONNACK to mqttx_f1fa166c (0, 0)
+1752834358: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752834360: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752834393: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752834394: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752834395: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752834413: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752834414: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (20 bytes))
+1752834424: Received PUBLISH from mqttx_f1fa166c (d0, q0, r0, m0, 'simple/topic', ... (22 bytes))
+1752834484: Received PINGREQ from mqttx_f1fa166c
+1752834484: Sending PINGRESP to mqttx_f1fa166c
+1752834544: Received PINGREQ from mqttx_f1fa166c
+1752834544: Sending PINGRESP to mqttx_f1fa166c
+1752834604: Received PINGREQ from mqttx_f1fa166c
+1752834604: Sending PINGRESP to mqttx_f1fa166c
+1752834664: Received PINGREQ from mqttx_f1fa166c
+1752834664: Sending PINGRESP to mqttx_f1fa166c
+1752834724: Received PINGREQ from mqttx_f1fa166c
+1752834724: Sending PINGRESP to mqttx_f1fa166c
+1752834784: Received PINGREQ from mqttx_f1fa166c
+1752834784: Sending PINGRESP to mqttx_f1fa166c
+1752834844: Received PINGREQ from mqttx_f1fa166c
+1752834844: Sending PINGRESP to mqttx_f1fa166c
+1752834886: New connection from 172.18.0.2:45721 on port 1883.
+1752834886: Sending CONNACK to auto-FDA7AB65-5695-D921-D851-DFD0E41DC5EE (0, 5)
+1752834886: Client auto-FDA7AB65-5695-D921-D851-DFD0E41DC5EE disconnected, not authorised.
+1752834887: New connection from 172.18.0.2:41351 on port 1883.
+1752834887: Sending CONNACK to auto-FE48B0A8-C9E7-3844-C79D-1AEF245583D1 (0, 5)
+1752834887: Client auto-FE48B0A8-C9E7-3844-C79D-1AEF245583D1 disconnected, not authorised.
+1752834889: New connection from 172.18.0.2:42661 on port 1883.
+1752834889: Sending CONNACK to auto-AED66826-E53E-A28E-B7D3-7E1D0EAB1A94 (0, 5)
+1752834889: Client auto-AED66826-E53E-A28E-B7D3-7E1D0EAB1A94 disconnected, not authorised.
+1752834893: New connection from 172.18.0.2:58593 on port 1883.
+1752834893: Sending CONNACK to auto-72309C7A-6D1F-D12C-A1CD-71E796929DA2 (0, 5)
+1752834893: Client auto-72309C7A-6D1F-D12C-A1CD-71E796929DA2 disconnected, not authorised.
+1752834894: New connection from 172.18.0.2:57557 on port 1883.
+1752834894: New client connected from 172.18.0.2:57557 as auto-FE3507DC-FED8-6046-9BA5-DEED7C4D2F71 (p2, c1, k60, u'flutter').
+1752834894: No will message specified.
+1752834894: Sending CONNACK to auto-FE3507DC-FED8-6046-9BA5-DEED7C4D2F71 (0, 0)
+1752834894: Client auto-FE3507DC-FED8-6046-9BA5-DEED7C4D2F71 closed its connection.
+1752834901: New connection from 172.18.0.2:54997 on port 1883.
+1752834901: Sending CONNACK to auto-179BA33B-5866-B224-AC3E-4AB809C4F336 (0, 5)
+1752834901: Client auto-179BA33B-5866-B224-AC3E-4AB809C4F336 disconnected, not authorised.
+1752834904: Received PINGREQ from mqttx_f1fa166c
+1752834904: Sending PINGRESP to mqttx_f1fa166c
+1752834907: New connection from 172.18.0.2:34789 on port 1883.
+1752834907: New client connected from 172.18.0.2:34789 as auto-E1AFD4BF-8910-B500-D28D-540DB4EC9CD8 (p2, c1, k60, u'flutter').
+1752834907: No will message specified.
+1752834907: Sending CONNACK to auto-E1AFD4BF-8910-B500-D28D-540DB4EC9CD8 (0, 0)
+1752834907: Client auto-E1AFD4BF-8910-B500-D28D-540DB4EC9CD8 closed its connection.
+1752834917: New connection from 172.18.0.2:39109 on port 1883.
+1752834917: Sending CONNACK to auto-518944AF-D66C-5459-6B03-A9E5A6B3659C (0, 5)
+1752834917: Client auto-518944AF-D66C-5459-6B03-A9E5A6B3659C disconnected, not authorised.
+1752834923: New connection from 172.18.0.2:44139 on port 1883.
+1752834923: New client connected from 172.18.0.2:44139 as auto-3838A68F-28A5-ADB7-13BA-CAE03E7D09E1 (p2, c1, k60, u'flutter').
+1752834923: No will message specified.
+1752834923: Sending CONNACK to auto-3838A68F-28A5-ADB7-13BA-CAE03E7D09E1 (0, 0)
+1752834923: Client auto-3838A68F-28A5-ADB7-13BA-CAE03E7D09E1 closed its connection.
+1752834949: New connection from 172.18.0.2:33081 on port 1883.
+1752834949: Sending CONNACK to auto-793EB7B8-20B3-E5FE-879C-F61DC54A8421 (0, 5)
+1752834949: Client auto-793EB7B8-20B3-E5FE-879C-F61DC54A8421 disconnected, not authorised.
