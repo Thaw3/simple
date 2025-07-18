@@ -9,5 +9,5 @@ def sub_cam01():
     if not data:
         return jsonify({'error': 'No JSON received'}), 400
 
-    start_mqtt_subscription(data)
-    return jsonify({'status': 'MQTT subscription started'}), 200
+    status = start_mqtt_subscription(data)
+    return jsonify({'status': status}), 200

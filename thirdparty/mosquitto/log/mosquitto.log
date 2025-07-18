@@ -426,3 +426,174 @@ To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
 1752557110: Opening ipv6 listen socket on port 1883.
 1752557110: Opening websockets listen socket on port 9001.
 1752557110: mosquitto version 2.0.21 running
+1752825894: mosquitto version 2.0.22 starting
+1752825894: Config loaded from /mosquitto/config/mosquitto.conf.
+1752825894: Warning: File /mosquitto/config/password_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password_file`.
+1752825894: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1752825894: Opening ipv4 listen socket on port 1883.
+1752825894: Opening ipv6 listen socket on port 1883.
+1752825894: Opening websockets listen socket on port 9001.
+1752825894: mosquitto version 2.0.22 running
+1752825950: mosquitto version 2.0.22 starting
+1752825950: Config loaded from /mosquitto/config/mosquitto.conf.
+1752825950: Warning: File /mosquitto/config/password_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password_file`.
+1752825950: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1752825950: Opening ipv4 listen socket on port 1883.
+1752825950: Opening ipv6 listen socket on port 1883.
+1752825950: Opening websockets listen socket on port 9001.
+1752825950: mosquitto version 2.0.22 running
+1752826300: mosquitto version 2.0.22 starting
+1752826300: Config loaded from /mosquitto/config/mosquitto.conf.
+1752826300: Warning: File /mosquitto/config/password_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password_file`.
+1752826300: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1752826300: Opening ipv4 listen socket on port 1883.
+1752826300: Opening ipv6 listen socket on port 1883.
+1752826300: Opening websockets listen socket on port 9001.
+1752826300: mosquitto version 2.0.22 running
+1752826351: New connection from 172.18.0.2:54435 on port 1883.
+1752826351: New client connected from 172.18.0.2:54435 as auto-40B62FA5-D506-CF38-A169-33ED017353E5 (p2, c1, k60, u'flutter').
+1752826351: No will message specified.
+1752826351: Sending CONNACK to auto-40B62FA5-D506-CF38-A169-33ED017353E5 (0, 0)
+1752826351: Client auto-40B62FA5-D506-CF38-A169-33ED017353E5 closed its connection.
+1752826397: New connection from 172.18.0.2:51767 on port 1883.
+1752826397: New client connected from 172.18.0.2:51767 as auto-1022807E-0D35-55FF-F8D3-82D5A9F0CDB7 (p2, c1, k60, u'flutter').
+1752826397: No will message specified.
+1752826397: Sending CONNACK to auto-1022807E-0D35-55FF-F8D3-82D5A9F0CDB7 (0, 0)
+1752826397: Client auto-1022807E-0D35-55FF-F8D3-82D5A9F0CDB7 closed its connection.
+1752826401: New connection from 172.18.0.2:44587 on port 1883.
+1752826401: New client connected from 172.18.0.2:44587 as auto-F9773BFE-0169-C070-C1FF-D3F3C85133FD (p2, c1, k60, u'flutter').
+1752826401: No will message specified.
+1752826401: Sending CONNACK to auto-F9773BFE-0169-C070-C1FF-D3F3C85133FD (0, 0)
+1752826401: Client auto-F9773BFE-0169-C070-C1FF-D3F3C85133FD closed its connection.
+1752826470: New connection from 172.18.0.2:54147 on port 1883.
+1752826470: New client connected from 172.18.0.2:54147 as auto-F7AF2D43-0C64-FB3D-78C0-9992E655FFBD (p2, c1, k60, u'flutter').
+1752826470: No will message specified.
+1752826470: Sending CONNACK to auto-F7AF2D43-0C64-FB3D-78C0-9992E655FFBD (0, 0)
+1752826470: Client auto-F7AF2D43-0C64-FB3D-78C0-9992E655FFBD closed its connection.
+1752826943: mosquitto version 2.0.22 starting
+1752826943: Config loaded from /mosquitto/config/mosquitto.conf.
+1752826943: Warning: File /mosquitto/config/password_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password_file`.
+1752826943: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1752826943: Opening ipv4 listen socket on port 1883.
+1752826943: Opening ipv6 listen socket on port 1883.
+1752826943: Opening websockets listen socket on port 9001.
+1752826943: mosquitto version 2.0.22 running
+1752827012: New connection from 172.18.0.2:46627 on port 1883.
+1752827012: New client connected from 172.18.0.2:46627 as auto-67D0E17F-6FF8-46F6-5160-5A39008BA1A2 (p2, c1, k60, u'flutter').
+1752827012: No will message specified.
+1752827012: Sending CONNACK to auto-67D0E17F-6FF8-46F6-5160-5A39008BA1A2 (0, 0)
+1752827012: Client auto-67D0E17F-6FF8-46F6-5160-5A39008BA1A2 closed its connection.
+1752827676: mosquitto version 2.0.22 starting
+1752827676: Config loaded from /mosquitto/config/mosquitto.conf.
+1752827676: Warning: File /mosquitto/config/password_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password_file`.
+1752827676: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1752827676: Opening ipv4 listen socket on port 1883.
+1752827676: Opening ipv6 listen socket on port 1883.
+1752827676: Opening websockets listen socket on port 9001.
+1752827676: mosquitto version 2.0.22 running
+1752827694: New connection from 172.18.0.2:39727 on port 1883.
+1752827694: New client connected from 172.18.0.2:39727 as auto-D5CB3C72-6F50-B973-BD1F-D16182A551EF (p2, c1, k60, u'flutter').
+1752827694: No will message specified.
+1752827694: Sending CONNACK to auto-D5CB3C72-6F50-B973-BD1F-D16182A551EF (0, 0)
+1752827698: New connection from 172.18.0.2:44669 on port 1883.
+1752827698: New client connected from 172.18.0.2:44669 as auto-83CA6B50-B62C-E5F7-B268-47097409B8BF (p2, c1, k60, u'flutter').
+1752827698: No will message specified.
+1752827698: Sending CONNACK to auto-83CA6B50-B62C-E5F7-B268-47097409B8BF (0, 0)
+1752827704: New connection from 172.18.0.2:55603 on port 1883.
+1752827704: New client connected from 172.18.0.2:55603 as auto-BA0B967A-9F49-BD5B-4C96-351B74DFCAEC (p2, c1, k60, u'flutter').
+1752827704: No will message specified.
+1752827704: Sending CONNACK to auto-BA0B967A-9F49-BD5B-4C96-351B74DFCAEC (0, 0)
+1752827705: New connection from 172.18.0.2:48085 on port 1883.
+1752827705: New client connected from 172.18.0.2:48085 as auto-D862D630-A451-4B45-9F7C-5DB9744B71AC (p2, c1, k60, u'flutter').
+1752827705: No will message specified.
+1752827705: Sending CONNACK to auto-D862D630-A451-4B45-9F7C-5DB9744B71AC (0, 0)
+1752827754: Received PINGREQ from auto-D5CB3C72-6F50-B973-BD1F-D16182A551EF
+1752827754: Sending PINGRESP to auto-D5CB3C72-6F50-B973-BD1F-D16182A551EF
+1752827758: Received PINGREQ from auto-83CA6B50-B62C-E5F7-B268-47097409B8BF
+1752827758: Sending PINGRESP to auto-83CA6B50-B62C-E5F7-B268-47097409B8BF
+1752827764: Received PINGREQ from auto-BA0B967A-9F49-BD5B-4C96-351B74DFCAEC
+1752827764: Sending PINGRESP to auto-BA0B967A-9F49-BD5B-4C96-351B74DFCAEC
+1752827765: Received PINGREQ from auto-D862D630-A451-4B45-9F7C-5DB9744B71AC
+1752827765: Sending PINGRESP to auto-D862D630-A451-4B45-9F7C-5DB9744B71AC
+1752827814: Received PINGREQ from auto-D5CB3C72-6F50-B973-BD1F-D16182A551EF
+1752827814: Sending PINGRESP to auto-D5CB3C72-6F50-B973-BD1F-D16182A551EF
+1752827818: Received PINGREQ from auto-83CA6B50-B62C-E5F7-B268-47097409B8BF
+1752827818: Sending PINGRESP to auto-83CA6B50-B62C-E5F7-B268-47097409B8BF
+1752827824: Received PINGREQ from auto-BA0B967A-9F49-BD5B-4C96-351B74DFCAEC
+1752827824: Sending PINGRESP to auto-BA0B967A-9F49-BD5B-4C96-351B74DFCAEC
+1752827825: Received PINGREQ from auto-D862D630-A451-4B45-9F7C-5DB9744B71AC
+1752827825: Sending PINGRESP to auto-D862D630-A451-4B45-9F7C-5DB9744B71AC
+1752827874: Received PINGREQ from auto-D5CB3C72-6F50-B973-BD1F-D16182A551EF
+1752827874: Sending PINGRESP to auto-D5CB3C72-6F50-B973-BD1F-D16182A551EF
+1752827878: Received PINGREQ from auto-83CA6B50-B62C-E5F7-B268-47097409B8BF
+1752827878: Sending PINGRESP to auto-83CA6B50-B62C-E5F7-B268-47097409B8BF
+1752827880: mosquitto version 2.0.22 starting
+1752827880: Config loaded from /mosquitto/config/mosquitto.conf.
+1752827880: Warning: File /mosquitto/config/password_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password_file`.
+1752827880: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1752827880: Opening ipv4 listen socket on port 1883.
+1752827880: Opening ipv6 listen socket on port 1883.
+1752827880: Opening websockets listen socket on port 9001.
+1752827880: mosquitto version 2.0.22 running
+1752828209: mosquitto version 2.0.22 starting
+1752828209: Config loaded from /mosquitto/config/mosquitto.conf.
+1752828209: Warning: File /mosquitto/config/password_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password_file`.
+1752828209: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1752828209: Opening ipv4 listen socket on port 1883.
+1752828209: Opening ipv6 listen socket on port 1883.
+1752828209: Opening websockets listen socket on port 9001.
+1752828209: mosquitto version 2.0.22 running
+1752828220: New connection from 172.18.0.2:56669 on port 1883.
+1752828220: New client connected from 172.18.0.2:56669 as auto-1C5CDBA8-F727-A310-CBC5-EFBA2C00D6A4 (p2, c1, k60, u'flutter').
+1752828220: No will message specified.
+1752828220: Sending CONNACK to auto-1C5CDBA8-F727-A310-CBC5-EFBA2C00D6A4 (0, 0)
+1752828220: Client auto-1C5CDBA8-F727-A310-CBC5-EFBA2C00D6A4 closed its connection.
+1752828291: New connection from 172.18.0.2:48363 on port 1883.
+1752828291: New client connected from 172.18.0.2:48363 as auto-54A2C2C6-44DB-5657-AD6E-B256BAA12BA9 (p2, c1, k60, u'flutter').
+1752828291: No will message specified.
+1752828291: Sending CONNACK to auto-54A2C2C6-44DB-5657-AD6E-B256BAA12BA9 (0, 0)
+1752828291: Client auto-54A2C2C6-44DB-5657-AD6E-B256BAA12BA9 closed its connection.
+1752829037: mosquitto version 2.0.22 starting
+1752829037: Config loaded from /mosquitto/config/mosquitto.conf.
+1752829037: Warning: File /mosquitto/config/password_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password_file`.
+1752829037: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1752829037: Opening ipv4 listen socket on port 1883.
+1752829037: Opening ipv6 listen socket on port 1883.
+1752829037: Opening websockets listen socket on port 9001.
+1752829037: mosquitto version 2.0.22 running
+1752829459: mosquitto version 2.0.22 starting
+1752829459: Config loaded from /mosquitto/config/mosquitto.conf.
+1752829459: Warning: File /mosquitto/config/password_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password_file`.
+1752829459: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1752829459: Opening ipv4 listen socket on port 1883.
+1752829459: Opening ipv6 listen socket on port 1883.
+1752829459: Opening websockets listen socket on port 9001.
+1752829459: mosquitto version 2.0.22 running
+1752829744: mosquitto version 2.0.22 starting
+1752829744: Config loaded from /mosquitto/config/mosquitto.conf.
+1752829744: Warning: File /mosquitto/config/password_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password_file`.
+1752829744: Warning: File /mosquitto/config/acl_file has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/acl_file`.
+1752829744: Opening ipv4 listen socket on port 1883.
+1752829744: Opening ipv6 listen socket on port 1883.
+1752829744: Opening websockets listen socket on port 9001.
+1752829744: mosquitto version 2.0.22 running

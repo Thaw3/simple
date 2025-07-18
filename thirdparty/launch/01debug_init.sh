@@ -1,8 +1,8 @@
 #!/bin/bash
 
-APIPWD="/home/myatsu/Proje/simple/thirdparty/api"
-SQLPWD="/home/myatsu/Proje/simple/thirdparty/sql"
-MQPWD="/home/myatsu/Proje/simple/thirdparty/mosquitto"
+APIPWD="/home/thaw/Proje/simple/thirdparty/api"
+SQLPWD="/home/thaw/Proje/simple/thirdparty/sql"
+MQPWD="/home/thaw/Proje/simple/thirdparty/mosquitto"
 docker ps -a
 docker rm -f mariadb
 docker rm -f mosquitto
