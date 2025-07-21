@@ -1,94 +1,65 @@
-# This is mqtt client for subscribing to a topic
-# Import necessary libraries
-import paho.mqtt.client as mqtt
-import datetime
-import os
 import threading
 import logging
+import datetime
+import json
+import paho.mqtt.client as paho
 
-# --- Logging Configuration ---
-# Set up a logger for the application
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO) # Set the minimum level to log for the app
-
-# Create handlers
-# StreamHandler for console output (important for Docker logs)
+logger.setLevel(logging.INFO)
 stream_handler = logging.StreamHandler()
-stream_handler.setLevel(logging.INFO) # Output INFO level and higher to console
-
-# Formatter
+stream_handler.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 stream_handler.setFormatter(formatter)
-
-# Add handlers to the logger
 logger.addHandler(stream_handler)
+received_messages = []
 
-logger.info("Application starting up and logging configured.")
-
-
-
-
-# Callback when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
         logger.info("Connected successfully.")
-        client.subscribe(userdata['topic_name'])
+        client.subscribe(userdata['topic_name'], qos=0)
+        logger.info(f"Subscribed to topic: {userdata['topic_name']}")
     else:
         logger.error(f"Connection failed with code {rc}")
 
 
-received_messages = [] # This global list stores the messages
-
-
 def on_message(client, userdata, msg):
- 
     payload = msg.payload.decode('utf-8', errors='ignore')
-
     timestamp = datetime.datetime.utcnow().isoformat() + "Z"
-    message_data = {
-        'topic': msg.topic,       # The MQTT topic the message was published to
-        'payload': payload,       # The decoded message content
-        'timestamp': timestamp    # The time the message was received by this client
-    }
-    received_messages.append(message_data)
-    logger.info(f"MQTT Client: Received message on topic '{msg.topic}'. Payload preview: {payload[:100]}{'...' if len(payload) > 100 else ''}")
+    try:
+        data = json.loads(payload)
+        logger.info(f"MQTT Client: Received JSON message on topic '{msg.topic}': {data}")
+        received_messages.append({
+            "topic": msg.topic,
+            "payload": data,
+            "timestamp": timestamp
+        })
+    except Exception:
+        logger.info(f"MQTT Client: Received non-JSON message on topic '{msg.topic}': {payload}")
+        received_messages.append({
+            "topic": msg.topic,
+            "payload": payload,
+            "timestamp": timestamp
+        })
 
-def get_received_messages():
-    logger.info("API: Fetching received messages.")
-    return received_messages
-
-def subscribe_cam01(data, status_dict):
-    host = data.get('host')
-    topic_name = data.get('topic_name')
-    port = data.get('port')
-    username = data.get('username')
-    password = data.get('password')
-
-    userdata = {'topic_name': topic_name}
-    client = mqtt.Client(userdata=userdata)
-    if username and password:
-        client.username_pw_set(username, password)
+def mqtt_worker(config, topic_name):
+    client = paho.Client(userdata={'topic_name': topic_name})
+    client.username_pw_set(config.get('username', ''), config.get('password', ''))
     client.on_connect = on_connect
     client.on_message = on_message
+    client.connect(config['host'], config['port'], keepalive=5)
+    logger.info(f"MQTT worker started for topic {topic_name}")
+    client.loop_forever()
 
-    try:
-        client.connect(host, port, 60)
-        print(f"Subscribing to topic '{topic_name}' on {host}:{port}...")
-        status_dict['status'] = 'connected'
-        client.loop_forever()
-    except Exception as e:
-        print(f"Connection error: {e}")
-        status_dict['status'] = f'error: {e}'
-    except KeyboardInterrupt:
-        print("Disconnected from broker.")
-        client.disconnect()
-        status_dict['status'] = 'disconnected'
-
+def subscribe_cam01(data, status_dict):
+    topic_name = data.get('topicName')
+    logger.info(f"Starting MQTT subscription with topic: {topic_name}")
+    thread = threading.Thread(target=mqtt_worker, args=(data, topic_name), daemon=True)
+    thread.start()
+    status_dict['status'] = 'mqtt thread started'
 
 def start_mqtt_subscription(data):
     status_dict = {'status': 'initializing'}
-    thread = threading.Thread(target=subscribe_cam01, args=(data, status_dict))
-    thread.daemon = True
-    thread.start()
-    logger.info("MQTT subscription thread started.")
+    logger.info(f"Starting MQTT subscription with data: {data}")
+    subscribe_cam01(data, status_dict)
+    logger.info("MQTT worker thread started.")
     return status_dict['status']

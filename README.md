@@ -53,4 +53,12 @@ mosquitto_sub -q 2 -h localhost -t simple/topic -u flutter -P yourpassword
 ```bash
 mosquitto_pub -q 2 -h localhost -t simple/topic -m "Hello MQTT" -u flutter -P yourpassword
 ```
+```bash
+app.config['MQTT_KEEPALIVE'] = 5  # Set the time interval for sending a ping to the broker
+```
 
+Paho MQTT is not Flask-aware or Flask-synchronized.
+Flask-MQTT is built to bridge Flask and MQTT, but is best used in the main Flask app context, not in background threads.
+
+If you want Flask and MQTT to "talk" to each other, use Flask-MQTT in your main app.
+If you want a background MQTT worker, use Paho MQTT directly.

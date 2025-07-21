@@ -58,7 +58,7 @@ class _MainPageState extends State<MainPage> {
     DatabaseConnection(),
     MqttClientPage(),
     CameraScreen(), // AI Model Prediction page
-    MonitorMqttUi(),
+    ChatScreen(),
     DatasetCollector(), // Monitor MQTT page
   ];
   // Page တစ်ခုထည့်ချင်ရင် ဒီမှာထည့်ပါ။

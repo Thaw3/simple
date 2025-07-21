@@ -1,25 +1,19 @@
-class Chat {
-  final String content;
-  final String time;
-  final String senderName; // Add senderName field
+class ChatMessage {
+  final String topic;
+  final String payload;
+  final String timestamp;
 
-  const Chat({
-    required this.content,
-    required this.time,
-    required this.senderName,
+  ChatMessage({
+    required this.topic,
+    required this.payload,
+    required this.timestamp,
   });
 
-  factory Chat.fromJson(Map<String, dynamic> json) {
-    return Chat(
-      content: json['content'] as String,
-      time: json['time'] as String,
-      senderName: json['senderName'] as String, // Parse senderName
+  factory ChatMessage.fromJson(Map<String, dynamic> json) {
+    return ChatMessage(
+      topic: json['topic'] ?? '',
+      payload: json['payload']?.toString() ?? '', // force to String
+      timestamp: json['timestamp'] ?? '',
     );
   }
-
-  Map<String, dynamic> toJson() => {
-    'content': content,
-    'time': time,
-    'senderName': senderName, // Include senderName in toJson
-  };
 }
