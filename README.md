@@ -7,13 +7,12 @@ Simple App is a Flutter-based application designed to monitor MQTT messages and 
 - **Dynamic Status Display**: Real-time connection status updates.
 - **Recent Activity Section**: Displays the latest activities.
 - **AI Model Prediction**: Predict AI models using live camera feeds or uploaded files.
-- **Database Connection**: Connect to various databases with ease.
 - **MQTT Monitoring**: Monitor MQTT messages and topics.
 
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/geommax/simple.git
+   git clone https://github.com/Thaw3/simple.git
    ```
 2. Navigate to the project directory:
    ```bash
@@ -29,7 +28,9 @@ Simple App is a Flutter-based application designed to monitor MQTT messages and 
    ```bash
    ./thirdparty/launch/01debug_init.sh
    ```
-2. Run the Flutter app:
+2.run 'MQTTX-1.12.0.AppImage' in new terminal
+
+3. Run the Flutter app:
    ```bash
    flutter run
    ```
@@ -49,6 +50,3 @@ Contributions are welcome! Please fork the repository and submit a pull request.
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-## Contact
-For questions or support, please contact [geommax](https://github.com/geommax).
