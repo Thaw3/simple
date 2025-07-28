@@ -1,68 +1,54 @@
-# simple
-<<<<<<< HEAD
+# Simple App
 
-A new Funny Flutter project.
+## Overview
+Simple App is a Flutter-based application designed to monitor MQTT messages and predict AI models effortlessly. It provides a user-friendly interface for managing connections, viewing recent activity, and exploring app features.
 
-## Getting Started
+## Features
+- **Dynamic Status Display**: Real-time connection status updates.
+- **Recent Activity Section**: Displays the latest activities.
+- **AI Model Prediction**: Predict AI models using live camera feeds or uploaded files.
+- **Database Connection**: Connect to various databases with ease.
+- **MQTT Monitoring**: Monitor MQTT messages and topics.
 
-This project is a starting point for a Flutter application.
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/geommax/simple.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd simple
+   ```
+3. Install dependencies:
+   ```bash
+   flutter pub get
+   ```
 
-A few resources to get you started if this is your first Flutter project:
+## Running the App
+1. Start the backend services using Docker:
+   ```bash
+   ./thirdparty/launch/01debug_init.sh
+   ```
+2. Run the Flutter app:
+   ```bash
+   flutter run
+   ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Backend Services
+- **Flask API**: Handles MQTT subscriptions and database interactions.
+- **MariaDB**: Database for storing app data.
+- **Mosquitto**: MQTT broker for message handling.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Directory Structure
+- `lib/`: Contains the Flutter app's source code.
+- `thirdparty/`: Backend services and Docker configurations.
+- `assets/`: Images and data files used in the app.
 
-```bash
-docker build -t flask_api:v1 .
-```
+## Contributing
+Contributions are welcome! Please fork the repository and submit a pull request.
 
-```bash
-docker build -t mariadb:v1 . 
-```
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-### Testing API POST methods 
-```bash
-curl -X POST http://localhost:5000/receive \
-  -H "Content-Type: application/json" \
-  -d '{"host":"localhost","dbName":"test","port":"3306","username":"user","password":"pass","dbType":"mysql"}'
-```
-
-### Testing mariadb is running or not
-```bash
-docker exec -it mariadb bash
-```
-```bash
-mariadb -u flutter -p
-```
-
-### MQTT Container Build & RUN
-
-```bash
-docker exec -it mosquitto bash
-```
-
-### Testing MQTT pub/sub
-
-```bash
-mosquitto_sub -q 2 -h localhost -t simple/topic -u flutter -P yourpassword
-```
-
-```bash
-mosquitto_pub -q 2 -h localhost -t simple/topic -m "Hello MQTT" -u flutter -P yourpassword
-```
-```bash
-app.config['MQTT_KEEPALIVE'] = 5  # Set the time interval for sending a ping to the broker
-```
-
-Paho MQTT is not Flask-aware or Flask-synchronized.
-Flask-MQTT is built to bridge Flask and MQTT, but is best used in the main Flask app context, not in background threads.
-
-If you want Flask and MQTT to "talk" to each other, use Flask-MQTT in your main app.
-If you want a background MQTT worker, use Paho MQTT directly.
-=======
-test
->>>>>>> 60a0eb0152cfb49cb9f2e1e4465129bcc5a0a8fc
+## Contact
+For questions or support, please contact [geommax](https://github.com/geommax).
