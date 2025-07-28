@@ -10,6 +10,8 @@ class APIService {
     required String port,
     required String username,
     required String password,
+    required int keepAlive,
+    required int qos,
   }) async {
     final url = Uri.parse('http://localhost:5000/api/subcam01_request');
 

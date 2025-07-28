@@ -10,85 +10,109 @@ class AppDrawer extends StatelessWidget {
     required this.onItemSelected,
   }) : super(key: key);
 
+  // This widget builds the app drawer with a gradient background and various menu items
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          DrawerHeader(
-            decoration: BoxDecoration(color: Colors.blue),
-            child: Text(
-              'Menu',
-              style: TextStyle(color: Colors.white, fontSize: 24),
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.blue.shade200, Colors.blue.shade50],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.blue, Colors.blueAccent],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+              ),
+              accountName: Text(
+                'Welcome!',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              accountEmail: Text('', style: TextStyle(color: Colors.white70)),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Icon(Icons.person, size: 40, color: Colors.blueAccent),
+              ),
             ),
-          ),
-          ListTile(
-            leading: Icon(Icons.home),
-            title: Text('Home'),
-            selected: selectedIndex == 0,
-            onTap: () {
-              Navigator.pop(context);
-              onItemSelected(0);
-            },
-          ),
 
-          ListTile(
-            leading: Icon(Icons.calculate_outlined),
-            title: Text('Robot Price Calculator'),
-            selected: selectedIndex == 1,
-            onTap: () {
-              Navigator.pop(context);
-              onItemSelected(1);
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.storage),
-            title: Text('Database Connection'),
-            selected: selectedIndex == 2,
-            onTap: () {
-              Navigator.pop(context);
-              onItemSelected(2);
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.private_connectivity),
-            title: Text('MQTT Connection'),
-            selected: selectedIndex == 3,
-            onTap: () {
-              Navigator.pop(context);
-              onItemSelected(3);
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.camera_alt),
-            title: Text('AI Model Prediction'),
-            selected: selectedIndex == 4,
-            onTap: () {
-              Navigator.pop(context);
-              onItemSelected(4);
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.message_sharp),
-            title: Text('Monitor MQTT'),
-            selected: selectedIndex == 5,
-            onTap: () {
-              Navigator.pop(context);
-              onItemSelected(5);
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.dataset_linked),
-            title: Text('Dataset Collection'),
-            selected: selectedIndex == 6,
-            onTap: () {
-              Navigator.pop(context);
-              onItemSelected(6);
-            },
-          ),
-        ],
+            // List of menu items in the drawer
+            _buildDrawerTile(context, Icons.home, 'Home', 0),
+            Divider(),
+            _buildDrawerTile(
+              context,
+              Icons.calculate_outlined,
+              'Robot Price Calculator',
+              1,
+            ),
+            Divider(),
+            _buildDrawerTile(context, Icons.storage, 'Database Connection', 2),
+
+            _buildDrawerTile(
+              context,
+              Icons.private_connectivity,
+              'MQTT Connection',
+              3,
+            ),
+            _buildDrawerTile(context, Icons.message_sharp, 'Monitor MQTT', 4),
+            Divider(),
+            _buildDrawerTile(
+              context,
+              Icons.camera_alt,
+              'AI Model Prediction',
+              5,
+            ),
+            Divider(),
+            _buildDrawerTile(
+              context,
+              Icons.dataset_linked,
+              'Dataset Collection',
+              6,
+            ),
+          ],
+        ),
       ),
+    );
+  }
+
+  // This method builds a single tile in the drawer
+  Widget _buildDrawerTile(
+    BuildContext context,
+    IconData icon,
+    String title,
+    int index,
+  ) {
+    return ListTile(
+      leading: Icon(
+        icon,
+        color:
+            selectedIndex == index
+                ? const Color.fromARGB(255, 96, 149, 240)
+                : Colors.grey[700],
+      ),
+      title: Text(
+        title,
+        style: TextStyle(
+          fontWeight:
+              selectedIndex == index ? FontWeight.bold : FontWeight.normal,
+          color: selectedIndex == index ? Colors.blueAccent : Colors.black,
+        ),
+      ),
+      selected: selectedIndex == index,
+      selectedTileColor: Colors.blue.shade50,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      onTap: () {
+        Navigator.pop(context);
+        onItemSelected(index);
+      },
     );
   }
 }

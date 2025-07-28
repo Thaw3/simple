@@ -37,7 +37,7 @@ class CameraView extends StatelessWidget {
         children: [
           // Buttons section
           Container(
-            color: const Color.fromARGB(255, 255, 254, 254),
+            color: const Color.fromARGB(255, 253, 252, 252),
             padding: const EdgeInsets.symmetric(
               horizontal: 16.0,
               vertical: 8.0,
@@ -152,7 +152,7 @@ class CameraView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 backgroundColor: const Color.fromARGB(255, 10, 69, 121),
-                foregroundColor: Colors.white,
+                foregroundColor: const Color.fromARGB(255, 252, 251, 251),
                 elevation: 5,
               ),
             ),

@@ -25,6 +25,7 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     payload = msg.payload.decode('utf-8', errors='ignore')
     timestamp = datetime.datetime.utcnow().isoformat() + "Z"
+    # Remove deduplication logic so all messages are appended
     try:
         data = json.loads(payload)
         logger.info(f"MQTT Client: Received JSON message on topic '{msg.topic}': {data}")

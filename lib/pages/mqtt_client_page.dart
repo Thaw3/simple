@@ -16,6 +16,11 @@ class _MqttClientPageState extends State<MqttClientPage> {
   final TextEditingController portController = TextEditingController();
   final TextEditingController userController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController _keepAliveController = TextEditingController(
+    text: '60',
+  );
+  int _keepAlive = 60;
+  int _qos = 0;
 
   bool isPasswordVisible = false;
   bool isConnecting = false;
@@ -63,6 +68,8 @@ class _MqttClientPageState extends State<MqttClientPage> {
       username: userController.text,
       password: passwordController.text,
       topicName: topicController.text,
+      keepAlive: _keepAlive,
+      qos: _qos,
     );
 
     setState(() => isConnecting = false);
@@ -129,6 +136,33 @@ class _MqttClientPageState extends State<MqttClientPage> {
                 onPressed:
                     () =>
                         setState(() => isPasswordVisible = !isPasswordVisible),
+              ),
+            ),
+
+            _buildTextField(
+              controller: _keepAliveController,
+              label: 'Keep Alive Interval (seconds)',
+              keyboardType: TextInputType.number,
+              onChanged: (val) {
+                setState(() => _keepAlive = int.tryParse(val) ?? 60);
+              },
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 12),
+              child: DropdownButtonFormField<int>(
+                value: _qos,
+                decoration: const InputDecoration(
+                  labelText: 'QoS',
+                  border: OutlineInputBorder(),
+                ),
+                items: const [
+                  DropdownMenuItem(value: 0, child: Text('QoS 0')),
+                  DropdownMenuItem(value: 1, child: Text('QoS 1')),
+                  DropdownMenuItem(value: 2, child: Text('QoS 2')),
+                ],
+                onChanged: (val) {
+                  if (val != null) setState(() => _qos = val);
+                },
               ),
             ),
 

@@ -37,6 +37,7 @@ class _MyAppState extends State<MyApp> {
         title: 'ROM Dynamics Simple',
         theme: ThemeData(primarySwatch: Colors.blue),
         home: MainPage(),
+        debugShowCheckedModeBanner: false,
       ),
     );
   }
@@ -57,8 +58,8 @@ class _MainPageState extends State<MainPage> {
     RobotPriceCalculatorPage(),
     DatabaseConnection(),
     MqttClientPage(),
-    CameraScreen(), // AI Model Prediction page
     ChatScreen(),
+    CameraScreen(), // AI Model Prediction page
     DatasetCollector(), // Monitor MQTT page
   ];
   // Page တစ်ခုထည့်ချင်ရင် ဒီမှာထည့်ပါ။
@@ -73,8 +74,8 @@ class _MainPageState extends State<MainPage> {
     'Robot Price Calculator',
     'Database Connection',
     'MQTT Connection',
-    'AI Model Prediction',
     'Monitor MQTT',
+    'AI Model Prediction',
     'Dataset Collection',
     // Page တစ်ခုထည့်ချင်ရင် ဒီမှာထည့်ပါ။
   ];
