@@ -28,7 +28,7 @@ Simple App is a Flutter-based application designed to monitor MQTT messages and 
    ```bash
    ./thirdparty/launch/01debug_init.sh
    ```
-2.run 'MQTTX-1.12.0.AppImage' in new terminal
+2. run 'MQTTX-1.12.0.AppImage' in new terminal
 
 3. Run the Flutter app:
    ```bash
