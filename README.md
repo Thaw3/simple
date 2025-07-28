@@ -1,4 +1,5 @@
 # simple
+<<<<<<< HEAD
 
 A new Funny Flutter project.
 
@@ -62,3 +63,6 @@ Flask-MQTT is built to bridge Flask and MQTT, but is best used in the main Flask
 
 If you want Flask and MQTT to "talk" to each other, use Flask-MQTT in your main app.
 If you want a background MQTT worker, use Paho MQTT directly.
+=======
+test
+>>>>>>> 60a0eb0152cfb49cb9f2e1e4465129bcc5a0a8fc
